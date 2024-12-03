@@ -8,14 +8,17 @@ const Header = () => {
         <div className="flex justify-center items-center gap-5">
             <img src="/logo.jpg" alt="rb-coworking-space" width={50}/>
             <h1 className="text-xl font-[kablammo] text-[#C7AD86]">RB-Coworking-space</h1>
-         </div>
-         <div>
-           <Link to="/signin">
+        </div>
+        <div className="flex justify-center items-center gap-8">
+          <Link to="/about">
+            <h3>QUI SOMMES NOUS</h3>
+          </Link>
+          <Link to="/signin">
             <button className="bg-[#C7AD86] text-white px-4 py-1 rounded-2xl hover:bg-[#6F4F37]">
               S'inscrire
             </button>
-           </Link>
-         </div>
+          </Link>
+        </div>
       </div>
     </div>
   )

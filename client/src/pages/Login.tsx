@@ -34,7 +34,7 @@ const Login = () => {
       console.log("Login successful:", user, token);
 
        // Navigate to the home page 
-      navigate("/");
+      navigate("/dashboard");
     }catch (error: any) {
       // Handle errors
       console.error("Login error:", error.response?.data?.message || error.message);
