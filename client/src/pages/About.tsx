@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import {
     Carousel,
     CarouselContent,
@@ -15,6 +16,7 @@ const About = () => {
     
     return (
         <>
+            <Header/>
             <button onClick={handleClick}><IoIosArrowRoundBack className="mt-10 ml-10 text-[#C7AD86]" size={40} /></button>
             <h1 className="text-4xl mt-4 font-[YujiMai] font-extrabold text-center text-[#C7AD86]">Qui sommes nous</h1>
             <p className="text-center mt-8 mx-16"> <span className="text-xl font-[kablammo] text-[#C7AD86]"> RB Coworking Space </span>est un espace de travail moderne situé à Teboulba, Monastir, conçu pour répondre aux besoins des professionnels, entrepreneurs, et travailleurs indépendants. Offrant une variété d'espaces, tels que des bureaux individuels, des salles de réunion et des chaises individuelles, RB Coworking Space propose un environnement collaboratif, équipé d'infrastructures modernes, idéal pour stimuler la productivité et favoriser les échanges. Avec une vision axée sur l'innovation et la flexibilité, RB Coworking Space vise à devenir un lieu incontournable pour le travail et la créativité dans la région. </p>

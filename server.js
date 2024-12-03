@@ -2,6 +2,7 @@ const express = require("express")
 const app = express()
 const dotenv= require('dotenv').config()
 const { authRoute } = require("./routes/auth")
+const { bookingRoute }  = require("./routes/bookingRoute")
 const passport = require("passport")
 const cors = require("cors");
 
@@ -18,6 +19,7 @@ connectDB()
 
 //config routes 
 app.use("/api", authRoute)
+app.use("/api", bookingRoute)
 
 
 

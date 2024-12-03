@@ -4,11 +4,9 @@ import {
 } from '@/components/ui/sidebar';
 import Header from '@/components/Header';
 import AppSidebar from '@/components/AppSidebar';
-import Services from './Services';
+import TableConception from '@/components/TableConception';
 
-
-
-const DashboardUser = () => {
+const Bureau = () => {
     return (
         <>
             <SidebarProvider>
@@ -19,8 +17,8 @@ const DashboardUser = () => {
                            {/* main */}
                             <div className="p-4">
                                 <SidebarTrigger />
-                                <Services/>
-                                
+                                <h1>bureau</h1>
+                                <TableConception/>
                             </div>
                     </div>
                 </div>
@@ -29,4 +27,4 @@ const DashboardUser = () => {
     )
 }
 
-export default DashboardUser
+export default Bureau

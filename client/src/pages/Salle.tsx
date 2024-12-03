@@ -4,14 +4,10 @@ import {
 } from '@/components/ui/sidebar';
 import Header from '@/components/Header';
 import AppSidebar from '@/components/AppSidebar';
-import Services from './Services';
 
-
-
-const DashboardUser = () => {
+const Salle = () => {
     return (
-        <>
-            <SidebarProvider>
+        <SidebarProvider>
                 <div className="flex h-screen w-full">
                     <AppSidebar />
                     <div className="flex-1 p-4">
@@ -19,14 +15,12 @@ const DashboardUser = () => {
                            {/* main */}
                             <div className="p-4">
                                 <SidebarTrigger />
-                                <Services/>
-                                
+                                <h1>salle de reunion</h1>
                             </div>
                     </div>
                 </div>
             </SidebarProvider>
-        </>
     )
 }
 
-export default DashboardUser
+export default Salle
