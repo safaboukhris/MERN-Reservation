@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Input from "../components/Input";
 import { ISignin, signinSchema} from "../validations/auth"
 import InputErrors from "../components/InputErrors";
-import { axiosInstance } from "../utils/axiosInstance";
+import { fetchData } from "../utils/axiosInstance";
 import { Link } from "react-router-dom"
 
 const Login = () => {
@@ -24,7 +24,7 @@ const Login = () => {
   const onSubmit: SubmitHandler<ISignin> = async (data) =>{
     // sending data to backend api
     try{
-      const response = await axiosInstance.post("/api/login",data);
+      const response = await fetchData("/api/login", 'POST', data);
       // Extract token and user data from the response
       const { token, user } = response.data;
       // Save the token and user data to localStorage (or sessionStorage)

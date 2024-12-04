@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Input from "../components/Input";
 import InputErrors from "../components/InputErrors";
 import { ISignup, signupSchema } from "../validations/auth";
-import { axiosInstance } from "../utils/axiosInstance";
+import { fetchData } from "../utils/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom"
 
@@ -28,7 +28,7 @@ const Register = () => {
       password
     }    
     try {
-      const response = await axiosInstance.post("/api/register",user);
+      const response = await fetchData("/api/register", "POST", user);
       console.log("Inscription réussie :", response.data);
       reset(); // Réinitialiser le formulaire
       navigate('/signin')
