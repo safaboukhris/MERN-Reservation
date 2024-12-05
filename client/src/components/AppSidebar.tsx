@@ -16,8 +16,7 @@ import {
 const menuItems = [
     { title: 'Home', url: '/', icon: Home },
     { title: 'Services', url: '/dashboard', icon: Briefcase },
-    { title: 'Historique', url: '#', icon: Inbox },
-//   { title: 'Historique', url: '#', icon: Search },
+    { title: 'Historique', url: '/dashboard/history', icon: Inbox },
     { title: 'Profile', url: '/dashboard/office', icon: User },
 ];
 

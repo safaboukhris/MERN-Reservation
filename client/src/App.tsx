@@ -8,7 +8,10 @@ import Bureau from "./pages/Bureau";
 import CoworkingReservation from "./pages/CoworkingReservation";
 import Salle from "./pages/Salle";
 import Reception from "./pages/Reception";
+import History from "./pages/History";
 import "./index.css"
+import Room from "./pages/Room";
+
 
 
 function App() {
@@ -25,6 +28,8 @@ function App() {
         <Route path="/dashboard/coworking" element={<CoworkingReservation/>}/>
         <Route path="/dashboard/meeting" element={<Salle/>}/>
         <Route path="/dashboard/reception" element={<Reception/>}/>
+        <Route path="/dashboard/history" element={<History/>}/>
+        <Route path="/room" element={<Room/>}/>
       </Routes>
     </>
   )

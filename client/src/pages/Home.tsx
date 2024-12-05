@@ -6,7 +6,7 @@ const Home = () => {
     <>
     <Header/>
       <div
-        className="h-[550px] bg-cover bg-center text-white flex justify-center items-center"
+        className="h-[650px] bg-cover bg-center text-white flex justify-center items-center"
         style={{ backgroundImage: "url('/slide1.jpg')" }}
       >
         

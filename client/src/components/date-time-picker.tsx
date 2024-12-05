@@ -1,8 +1,5 @@
-"use client";
- 
 import { add, format } from "date-fns";
 import { Calendar as CalendarIcon } from "lucide-react";
- 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -18,7 +15,7 @@ interface DateTimePickerProps {
     setDate : (date: Date | undefined) => void ;
     dateText : string ;
 }
- 
+
 export function DateTimePicker( props : DateTimePickerProps) {
 //   const [date, setDate] = React.useState<Date>();
 const {date, setDate, dateText} = props ; 
@@ -45,12 +42,12 @@ const {date, setDate, dateText} = props ;
         <Button
           variant={"outline"}
           className={cn(
-            "w-[280px] justify-start text-left font-normal",
+            "w-[200px] justify-start text-left font-normal dark:text-white text-gray-800",
             !date && "text-muted-foreground"
           )}
         >
           <CalendarIcon className="mr-2 h-4 w-4" />
-          {date ? format(date, "dd-MM-yy HH:mm") : <span>Pick a date</span>}
+          {date ? format(date, "dd-MM-yy HH:mm") : <span>{dateText}</span>}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">

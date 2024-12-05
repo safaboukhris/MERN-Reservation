@@ -22,6 +22,10 @@ const roomSchema = new schema({
         type:Number,
         required:true
     },
+    roomDescription:{
+        type:String,
+        required:true
+    },
     addedBy:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",

@@ -21,8 +21,10 @@ import {
 import { DateTimePicker } from "./date-time-picker"
 import { useState } from "react"
 import { fetchData } from "@/utils/axiosInstance"
+import { useNavigate } from "react-router-dom"
 
 const ButtonBooking = () => {
+    const navigate = useNavigate();
     const [checkInDate , setCheckInDate] = useState<Date>();
     const [checkOutDate , setcheckOutDate] = useState<Date>();
     const token = localStorage.getItem("authToken")
@@ -32,6 +34,7 @@ const ButtonBooking = () => {
         const res = await fetchData("/api/addbooking", 'POST', { checkInDate, checkOutDate}, { Authorization: `Bearer ${token}`})
         if( res.status === 200){
             alert(res.data.msg)
+            navigate("/dashboard/history")
         }
         // console.log(res.data)
         

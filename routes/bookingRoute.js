@@ -9,5 +9,9 @@ router.post(
     bookingController.addBooking
   );
 
-
+router.get(
+    "/getbookings",
+    passport.authenticate("jwt", { session: false }),
+    bookingController.getBookings
+)
 module.exports.bookingRoute = router

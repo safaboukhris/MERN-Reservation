@@ -24,25 +24,25 @@ const About = () => {
                 <Carousel>
                     <CarouselContent>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb1.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb1.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb2.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb2.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb3.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb3.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb5.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb5.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb9.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb9.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb13.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb13.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                         <CarouselItem className="basis-1/3">
-                            <img src="/rb14.jpg" alt="rb-coworkingspace" className="h-[400px] w-full object-cover rounded-lg"/>
+                            <img src="/rb14.jpg" alt="rb-coworkingspace" className="h-[500px] w-full object-cover rounded-lg"/>
                         </CarouselItem>
                     </CarouselContent>
                     <CarouselPrevious />
