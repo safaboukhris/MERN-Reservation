@@ -8,7 +8,8 @@ const bookingSchema = new schema({
     },
     bookedRoom:{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'room'
+        ref:'room',
+        required: true
     },
     bookedDate:{
         type:Date,

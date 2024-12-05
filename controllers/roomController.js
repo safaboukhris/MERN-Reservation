@@ -34,7 +34,7 @@ const addRoom = async (req, res) => {
 
 const getRooms = async (req, res) => {
     try{
-        const rooms = await roomModel.find({addedBy: req.user._id});
+        const rooms = await roomModel.find();
         return res.status(200).json({rooms});
 
     }catch (error){

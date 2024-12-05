@@ -20,6 +20,7 @@ const HistoryComponent = () => {
                 const response = await fetchData('/api/getbookings', 'GET', {}, {  Authorization: `Bearer ${token}`})
                 if(response.status === 200){
                     setHistory(response.data.history)
+                    console.log("my history is",response.data.history)
                 }
             }catch(error){
                 console.error(error)
@@ -36,7 +37,16 @@ const HistoryComponent = () => {
                 {history.length > 0 ? ( history.map((item: any, index: number) => (
                     <Card key={item._id} className="w-full">
                         <CardHeader>
-                            <CardTitle>room name</CardTitle>
+                            <CardTitle>
+                            {item.bookedRoom ? (
+                                        <>
+                                            <span>{item.bookedRoom.roomName}</span> -{" "}
+                                            <span>{item.bookedRoom.roomType}</span> ({item.bookedRoom.roomDescription})
+                                        </>
+                                    ) : (
+                                        "No room details available"
+                                    )}
+                            </CardTitle>
                             <CardDescription>Card Description</CardDescription>
                         </CardHeader>
                         <CardContent>

@@ -21,17 +21,21 @@ import {
 import { DateTimePicker } from "./date-time-picker"
 import { useState } from "react"
 import { fetchData } from "@/utils/axiosInstance"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const ButtonBooking = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const search = new URLSearchParams(location.search);
+    const roomId = search.get("id");
+
     const [checkInDate , setCheckInDate] = useState<Date>();
     const [checkOutDate , setcheckOutDate] = useState<Date>();
     const token = localStorage.getItem("authToken")
 
      //fetching data from the api 
     const booking = async () =>{
-        const res = await fetchData("/api/addbooking", 'POST', { checkInDate, checkOutDate}, { Authorization: `Bearer ${token}`})
+        const res = await fetchData("/api/addbooking", 'POST', { bookedRoom: roomId, checkInDate, checkOutDate}, { Authorization: `Bearer ${token}`})
         if( res.status === 200){
             alert(res.data.msg)
             navigate("/dashboard/history")
