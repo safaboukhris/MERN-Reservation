@@ -1,9 +1,7 @@
 const { roomModel } = require('../models/room');
 
 const addRoom = async (req, res) => {
-    const { roomName, roomType, roomCapacity, roomPrice, roomAvailability, roomDescription } = req.body;
-
-    console.log("Request body:", req.body);
+    const { roomName, roomType, roomCapacity, roomPrice, roomAvailability, roomDescription, roomImage } = req.body;
 
     if (!roomName || !roomType || !roomCapacity || !roomPrice) {
         return res.status(400).json({ message: "Please fill in all required fields." });
@@ -22,6 +20,7 @@ const addRoom = async (req, res) => {
             roomPrice,
             roomAvailability,
             roomDescription,
+            roomImage,
             addedBy: req.user._id,
         });
 
@@ -31,6 +30,7 @@ const addRoom = async (req, res) => {
         return res.status(500).json({ message: "Failed to add room." });
     }
 };
+
 
 const getRooms = async (req, res) => {
     try{
@@ -42,6 +42,7 @@ const getRooms = async (req, res) => {
         return res.status(500).json({ message: "Failed to get rooms." });
     }
 }
+
 
 const getRoomById = async (req, res) =>{
     try{

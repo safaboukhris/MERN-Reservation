@@ -24,26 +24,24 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col px-10 py-2 ">
+    <div className="flex flex-col px-10 py-2 relative z-20 ">
       <div className="flex justify-between items-center">
-        <div className="flex justify-center items-center gap-5">
-            <img src="/logo.jpg" alt="rb-coworking-space" width={50}/>
-            <h1 className="text-xl font-[kablammo] text-[#C7AD86]">RB-Coworking-space</h1>
-        </div>
+        <Link to={"/"}><div className="flex justify-center items-center gap-5">
+            <img src="/logo.png" alt="rb-coworking-space" width={60}/>
+            <h1 className="text-2xl font-[kablammo] text-[#ff861a]">RB-Coworking-space</h1>
+        </div></Link>
         <div className="flex justify-center items-center gap-8">
-          <Link to="/about">
-            <h3 className="font-[YujiMai] text-[#C7AD86]">QUI SOMMES NOUS</h3>
-          </Link>
           {token ? (
             // Icône utilisateur si le token existe
             <div className="flex items-center gap-2">
-              <Bell size={24}  className="cursor-pointer text-[#C7AD86] mr-4"/>
+              <Link to="/history"><span className=" text-[#ff861a] mx-10  font-[YujiMai] text-xl" >HISTORIQUE</span></Link>
+              <Bell size={32}  className="cursor-pointer text-[#ff861a] mr-4"/>
               <DropdownMenu>
-                <DropdownMenuTrigger><CircleUser size={24}  className="cursor-pointer text-[#C7AD86]" /></DropdownMenuTrigger>
+                <DropdownMenuTrigger><CircleUser size={32}  className="cursor-pointer text-[#ff861a]" /></DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuLabel className="text-[#f1a83a]">{user?.name}</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="cursor-pointer" onClick={()=>{navigate("/dashboard")}}>
+                    <DropdownMenuItem className="cursor-pointer" onClick={()=>{navigate("/")}}>
                       Mon compte
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer" onClick={handleSignOut}>
@@ -55,8 +53,8 @@ const Header = () => {
           ) : (
             // Bouton "Créer un compte" si le token n'existe pas
             <Link to="/signin">
-              <button className="bg-[#C7AD86] text-white px-4 py-1 rounded-2xl hover:bg-[#6F4F37]">
-                Créer un compte
+              <button className="bg-[#ff861a] text-white px-5 py-2 rounded-3xl hover:bg-[#6F4F37]">
+                Rejoignez nous
               </button>
             </Link>
           )}

@@ -15,9 +15,6 @@ import {
 // Définition des éléments du menu
 const menuItems = [
     { title: 'Home', url: '/', icon: Home },
-    { title: 'Services', url: '/dashboard', icon: Briefcase },
-    { title: 'Historique', url: '/dashboard/history', icon: Inbox },
-    { title: 'Profile', url: '/dashboard/office', icon: User },
 ];
 
 

@@ -7,10 +7,9 @@ const TableConception = () => {
 
     return (
         <>
-            <div className="flex justify-center items-center">
-                <div className="workspace-container flex justify-center items-center w-76 h-72">
-                    <div className=" relative flex justify-center items-center w-48 h-36 bg-[#DEB887] rounded-md">
-
+            <div className="flex justify-center items-center mt-[8%] ">
+                <div className="flex justify-center items-center  w-[60%] h-[60%]">
+                    <div className=" relative flex justify-center items-center w-[50%] h-36 bg-[#DEB887] rounded-md border">
                         <ButtonBooking/>
                         <button className=" right absolute hover:bg-[#f5debf] -right-12 top-1/2 transform -translate-y-1/2">
                             <Armchair  color="#A0522D" strokeWidth={2.5} size={36}/>

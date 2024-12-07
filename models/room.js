@@ -26,6 +26,10 @@ const roomSchema = new schema({
         type:String,
         required:true
     },
+    roomImage: {
+        type:String,
+        required:false
+    },
     addedBy:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",

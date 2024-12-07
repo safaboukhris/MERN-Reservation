@@ -5,10 +5,12 @@ import InputErrors from "../components/InputErrors";
 import { ISignup, signupSchema } from "../validations/auth";
 import { fetchData } from "../utils/axiosInstance";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useState , useEffect } from "react";
 
 const Register = () => {
-
+  
+  const [currentImage , setCurrentImage] = useState(0)
   const navigate = useNavigate()
   const { 
     register, 
@@ -44,6 +46,21 @@ const Register = () => {
     }
   }
 
+  const images = [
+    "coworking7.jpg",
+    "coworking2.jpg",
+    "coworking5.jpg",
+    "coworking3.jpg"
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 2000); 
+
+    return () => clearInterval(interval); 
+  }, [images.length]);
+
   const signupInputs = [
     { type: "text", placeholder: "Enter votre nom", register: register("name"), error: errors.name },
     { type: "text", placeholder: "Enter votre Prénon", register: register("lastname"), error: errors.lastname},
@@ -53,8 +70,9 @@ const Register = () => {
   ]
 
   return (
-    <div className="h-screen bg-[#e9cca2] flex items-center justify-center">
-      <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+    <div className="h-screen w-[90%]  grid grid-cols-2 mx-auto">
+      <div className=" flex items-center justify-center">
+      <div className=" w-[60%]  ">
       <h2 className="text-3xl text-center text-[#C7AD86] mb-6">CREER UN COMPTE</h2>
       <form  onSubmit={handleSubmit(onSubmit)} className="mb-4">
         {signupInputs.map((input) => (
@@ -70,7 +88,7 @@ const Register = () => {
         <button type="submit" disabled={isSubmitting}
         className="w-full py-3 bg-[#C7AD86] text-white rounded-lg hover:bg-[#A6895F] disabled:opacity-50">S'inscrire</button>
       <div className="text-center mt-4">
-      <p className="text-sm">
+      <p className="text-sm text-gray-800">
         Vous avez un compte ?
         <Link to="/signin" className="text-[#C7AD86] hover:text-[#A6895F] ml-5">
           Se connecter
@@ -79,6 +97,16 @@ const Register = () => {
     </div>
       </form>
       </div>
+    </div>
+    <div className="mt-[10%]">
+    <img 
+        src={images[currentImage]} 
+        alt={`Image ${currentImage}`} 
+        style={{ width: "100%", height: "90%" }}
+        className="rounded-3xl"
+
+      />
+    </div>
     </div>
   )
 }

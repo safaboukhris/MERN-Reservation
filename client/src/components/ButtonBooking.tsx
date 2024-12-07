@@ -38,7 +38,7 @@ const ButtonBooking = () => {
         const res = await fetchData("/api/addbooking", 'POST', { bookedRoom: roomId, checkInDate, checkOutDate}, { Authorization: `Bearer ${token}`})
         if( res.status === 200){
             alert(res.data.msg)
-            navigate("/dashboard/history")
+            navigate("/history")
         }
         // console.log(res.data)
         
@@ -53,7 +53,7 @@ const ButtonBooking = () => {
                         </DialogTrigger>
                         <DialogContent>
                             <DialogHeader>
-                                <DialogTitle>Are you absolutely sure?</DialogTitle>
+                                <DialogTitle>Sélectionnez vos dates !</DialogTitle>
                                 <DialogDescription>
                                     <div className="flex justify-between gap-2 items-center">
                                         <div className="flex flex-col gap-3 mt-5">
@@ -71,7 +71,7 @@ const ButtonBooking = () => {
                                         </AlertDialogTrigger>
                                         <AlertDialogContent>
                                             <AlertDialogHeader>
-                                                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                                                <AlertDialogTitle>Confirmez-vous cette réservation ?</AlertDialogTitle>
                                                 <AlertDialogDescription>
                                                     Vous êtes sur le point de réserver votre espace. Veuillez confirmer vos dates d'arrivée et de départ <br/>
                                                     <div className="mt-5">
