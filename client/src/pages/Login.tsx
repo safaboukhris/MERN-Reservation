@@ -16,20 +16,21 @@ const Login = () => {
     register, 
     handleSubmit, 
     reset, 
+    setError,
     formState: { errors, isSubmitting } 
   } = useForm<ISignin>({
     mode: "onChange",
     resolver: zodResolver(signinSchema)
   });
 
-   const images = [
-    "coworking7.jpg",
-    "coworking2.jpg",
-    "coworking5.jpg",
-    "coworking3.jpg"
-   ]
+    const images = [
+      "coworking7.jpg",
+      "coworking2.jpg",
+      "coworking5.jpg",
+      "coworking3.jpg"
+    ]
 
-   useEffect(() => {
+    useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 2000); 
@@ -41,16 +42,20 @@ const Login = () => {
     // sending data to backend api
     try{
       const response = await fetchData("/api/login", 'POST', data);
-      // Extract token and user data from the response
-      const { token, user } = response.data;
-      // Save the token and user data to localStorage (or sessionStorage)
-      localStorage.setItem("authToken", token);
-      localStorage.setItem("user", JSON.stringify(user));
-
-      console.log("Login successful:", user, token);
-
-       // Navigate to the home page 
-      navigate("/");
+      if (response.status === 401) {
+        alert("Mot de passe invalide")
+      } else if (response.status === 404) {
+        alert('Utilisateur non trouvé.')
+      } else if (response.status === 200) {
+        const { token, user } = response.data;
+        localStorage.setItem("authToken", token);
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/");
+      } else {
+        // Autres erreurs
+        console.error('Erreur inattendue:', response.data);
+        alert('Une erreur inattendue est survenue.');
+      }
     }catch (error: any) {
       // Handle errors
       console.error("Login error:", error.response?.data?.message || error.message);

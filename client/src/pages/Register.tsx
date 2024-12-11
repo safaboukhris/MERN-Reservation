@@ -31,9 +31,12 @@ const Register = () => {
     }    
     try {
       const response = await fetchData("/api/register", "POST", user);
-      console.log("Inscription réussie :", response.data);
-      reset(); // Réinitialiser le formulaire
-      navigate('/signin')
+      if(response.status === 409){
+        alert("l'utilisateur exist déja")
+      }else{
+        reset(); // Réinitialiser le formulaire
+        navigate('/signin')
+      }
     } catch (error: any) {
       if (error.response && error.response.status === 409) {
         // Handle user already exists error

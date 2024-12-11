@@ -23,6 +23,14 @@ const Reservations = () => {
         fetchHistory()
     },[token])
 
+    const handleDelete = async () {
+        try{
+            const response = await fetchData( '/api/delete-booking', 'DELETE', {}, {  Authorization: `Bearer ${token}`})
+            if(response.status === 200){
+                
+            }
+        }
+    }
 
     return (
         <>
@@ -60,6 +68,7 @@ const Reservations = () => {
                                             </p>
                                         </div>
                                         <div >
+                                            <button className="mb-8" onClick={handleDelete}>Delete</button>
                                             <p
                                                 className={`font-medium ${
                                                 item.status === "Confirmed"

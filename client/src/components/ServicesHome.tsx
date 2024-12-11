@@ -22,8 +22,8 @@ const ServicesHome = () => {
     },[])
 
     return (
-        <div className="mb-[8%]">
-            <h3 className="text-[#FF861A] font-[YujiMai] font-extrabold text-4xl text-center"> Trouvez l'environnement de travail qui vous motive</h3>
+        <div className="mb-[8%] ">
+            <h3 className="text-[#FF861A] font-[YujiMai] font-extrabold text-4xl text-center mt-[20%]"> Trouvez l'environnement de travail qui vous motive</h3>
             <div className="grid grid-cols-5 gap-8 mt-20 mx-10 p-4 ">
                 {rooms.length > 0 ? (
                     rooms.map((room: any) => (

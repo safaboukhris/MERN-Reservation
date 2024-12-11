@@ -1,14 +1,3 @@
-// import axios from 'axios';
-
-
-// export const axiosInstance = axios.create({
-//     baseURL: import.meta.env.VITE_BASE_URL, 
-//     headers: {
-//         'Content-Type': 'application/json',
-// },
-// });
-
-
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 // Crée une instance Axios avec une configuration de base

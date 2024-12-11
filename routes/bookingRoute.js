@@ -14,4 +14,10 @@ router.get(
     passport.authenticate("jwt", { session: false }),
     bookingController.getBookings
 )
+router.delete(
+  "/delete-booking",
+  passport.authenticate("jwt", { session: false }),
+  bookingController.deleteBooking
+)
+
 module.exports.bookingRoute = router

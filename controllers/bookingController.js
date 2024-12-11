@@ -39,9 +39,6 @@ const getBookings = async (req, res) => {
                 path: 'bookedRoom',
                 select: 'roomName roomType roomPrice roomDescription',
             });
-
-        console.log('Populated Booking History:', history);
-
         return res.status(200).json({ msg: "Booking details", history });
     } catch (error) {
         console.error(error);
@@ -49,6 +46,17 @@ const getBookings = async (req, res) => {
     }
 };
 
+const deleteBooking = async(req, res) => {
+    try{
+        const id = req.query.id
+        const deletedreservation = await bookingModel.deleteOne({_id : id})
+        return res.status(200).json({ msg: "booking deleted", deletedreservation })
+    }catch (error) {
+        console.error(error);
+        return res.status(500).json({ err: "Server Error Occurred" });
+    }
+    
+}
 
 
-module.exports.bookingController = {addBooking, getBookings};
+module.exports.bookingController = {addBooking, getBookings, deleteBooking};
