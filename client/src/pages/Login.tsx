@@ -53,7 +53,7 @@ const Login = () => {
           localStorage.setItem("user", JSON.stringify(user));
         // Redirection basée sur le rôle
         if (user.role === "admin") {
-          navigate("/admin/dashboard");
+          navigate("/admin");
         } else if (user.role === "user") {
           navigate("/");
         } else {

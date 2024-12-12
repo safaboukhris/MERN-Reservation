@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home, Inbox, Briefcase, User } from 'lucide-react';
+import { Home, Users } from 'lucide-react';
 import {
     Sidebar,
     SidebarContent,
@@ -15,6 +15,7 @@ import {
 // Définition des éléments du menu
 const menuItems = [
     { title: 'Home', url: '/', icon: Home },
+    { title: 'Gestion des utilisateurs', url:'/admin/users', icon: Users}
 ];
 
 
@@ -44,7 +45,7 @@ const AppSidebar = () => {
                 </SidebarContent>
             </Sidebar>
     </>
-  )
+    )
 }
 
 export default AppSidebar
