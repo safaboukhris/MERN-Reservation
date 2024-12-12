@@ -48,8 +48,15 @@ const login = async (req , res) => {
             console.error("error", error);
             return res.status(500).send("Internal Server Error");
         }
-
-
 };
 
-module.exports.authController = { register, login}
+const getUsers = async ( req, res ) => {
+    try {
+        const users = await userModel.find().sort({ createdAt: -1 }).select("-password");
+        res.send(users)
+    }catch (err){
+        res.status(500).json ({msg : err.message})
+    }
+}
+
+module.exports.authController = { register, login , getUsers}

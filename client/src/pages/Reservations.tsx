@@ -2,6 +2,7 @@ import { fetchData } from "@/utils/axiosInstance"
 import { useEffect, useState } from "react"
 import { format } from "date-fns";
 import Header from "@/components/Header";
+import { Trash2 } from "lucide-react";
 
 
 const Reservations = () => {
@@ -23,14 +24,16 @@ const Reservations = () => {
         fetchHistory()
     },[token])
 
-    const handleDelete = async () {
+    const handleDelete = async (id: string) => {
         try{
-            const response = await fetchData( '/api/delete-booking', 'DELETE', {}, {  Authorization: `Bearer ${token}`})
+            const response = await fetchData( `/api/delete-booking?id=${id}`, 'DELETE', {}, {  Authorization: `Bearer ${token}`})
             if(response.status === 200){
-                
+                setHistory(history.filter((item: any) => item._id !== id));
             }
+        }catch(error){
+            console.error("Erreur lors de la suppression :", error);
         }
-    }
+    };
 
     return (
         <>
@@ -68,7 +71,7 @@ const Reservations = () => {
                                             </p>
                                         </div>
                                         <div >
-                                            <button className="mb-8" onClick={handleDelete}>Delete</button>
+                                            <button className="mb-8" onClick={() => handleDelete(item._id)}><Trash2 color="#654b3a" /></button>
                                             <p
                                                 className={`font-medium ${
                                                 item.status === "Confirmed"

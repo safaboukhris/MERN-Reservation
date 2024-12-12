@@ -16,7 +16,6 @@ const Login = () => {
     register, 
     handleSubmit, 
     reset, 
-    setError,
     formState: { errors, isSubmitting } 
   } = useForm<ISignin>({
     mode: "onChange",
@@ -40,26 +39,35 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<ISignin> = async (data) =>{
     // sending data to backend api
-    try{
+    try {
       const response = await fetchData("/api/login", 'POST', data);
+  
       if (response.status === 401) {
-        alert("Mot de passe invalide")
+        alert("Mot de passe invalide");
       } else if (response.status === 404) {
-        alert('Utilisateur non trouvé.')
+        alert("Utilisateur non trouvé.");
       } else if (response.status === 200) {
         const { token, user } = response.data;
-        localStorage.setItem("authToken", token);
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate("/");
+  
+          localStorage.setItem("authToken", token);
+          localStorage.setItem("user", JSON.stringify(user));
+        // Redirection basée sur le rôle
+        if (user.role === "admin") {
+          navigate("/admin/dashboard");
+        } else if (user.role === "user") {
+          navigate("/");
+        } else {
+          console.error("Rôle utilisateur inconnu:", user.role);
+          alert("Rôle utilisateur non autorisé.");
+        }
       } else {
-        // Autres erreurs
-        console.error('Erreur inattendue:', response.data);
-        alert('Une erreur inattendue est survenue.');
+        console.error("Erreur inattendue:", response.data);
+        alert("Une erreur inattendue est survenue.");
       }
     }catch (error: any) {
       // Handle errors
       console.error("Login error:", error.response?.data?.message || error.message);
-      alert("Login failed. Please create an account.");
+        alert("Login failed. Please create an account.");
     } finally {
       // Optionally reset the form
       reset();

@@ -12,9 +12,9 @@ import {
 const Header = () => {
     const navigate = useNavigate();
     const token = localStorage.getItem('authToken')
-        // console.log(token)
     const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")!) : null;
-        // console.log(user)
+        console.log("my user is:::",user)
+        // console.log("my role ::", user.role)
 
          // Fonction pour se déconnecter
   const handleSignOut = () => {
@@ -26,10 +26,12 @@ const Header = () => {
   return (
     <div className="flex flex-col px-10 py-2 relative z-20 ">
       <div className="flex justify-between items-center">
-        <Link to={"/"}><div className="flex justify-center items-center gap-5">
+        <Link to={"/"}>
+          <div className="flex justify-center items-center gap-5">
             <img src="/logo.png" alt="rb-coworking-space" width={60}/>
             <h1 className="text-2xl font-[kablammo] text-[#ff861a]">RB-Coworking-space</h1>
-        </div></Link>
+          </div>
+        </Link>
         <div className="flex justify-center items-center gap-8">
           {token ? (
             // Icône utilisateur si le token existe
