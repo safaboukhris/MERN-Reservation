@@ -14,13 +14,13 @@ import {
 
 // Définition des éléments du menu
 const menuItems = [
-    { title: 'Home', url: '/', icon: Home },
+    // { title: 'Home', url: '/', icon: Home },
     { title: 'Gestion des utilisateurs', url:'/admin/users', icon: Users}
 ];
 
 
 const AppSidebar = () => {
-  return (
+    return (
     <>
        {/* Sidebar */}
             <Sidebar variant="floating" className="w-64">
