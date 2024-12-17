@@ -18,6 +18,10 @@ const UserSchema = new schema({
         type: String,
         required: true
     },
+    phone:{
+        type: String,
+        required: true
+    },
     role: {
         type: String,
         enum: ['admin', 'user'],

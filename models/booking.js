@@ -15,6 +15,10 @@ const bookingSchema = new schema({
         type:Date,
         default:Date.now
     },
+    message: {
+        type: String,
+        required: true
+    },
     checkInDate:{
         type:Date,
         required:true

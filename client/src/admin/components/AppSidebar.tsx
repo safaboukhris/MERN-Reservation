@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home, Users } from 'lucide-react';
+import { Users } from 'lucide-react';
 import {
     Sidebar,
     SidebarContent,
@@ -14,8 +14,9 @@ import {
 
 // Définition des éléments du menu
 const menuItems = [
-    // { title: 'Home', url: '/', icon: Home },
-    { title: 'Gestion des utilisateurs', url:'/admin/users', icon: Users}
+    { title: 'Gestion des utilisateurs', url:'/admin/users', icon: Users},
+    { title: 'Gestion des reservations', url:'/admin/booking', icon: Users},
+    { title: 'Gestion des espaces', url:'/admin/space', icon: Users},
 ];
 
 

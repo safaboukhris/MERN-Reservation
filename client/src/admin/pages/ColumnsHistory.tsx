@@ -14,7 +14,7 @@ import {
 
 export const columns: ColumnDef<any>[] = [
     {
-    accessorKey: 'name',
+    accessorKey: 'bookedBy.name',
     header: ({ column }) => {
       return (
         <Button
@@ -28,30 +28,40 @@ export const columns: ColumnDef<any>[] = [
     }
   },
   {
-    accessorKey: 'lastname',
-    header: 'Nom de famille'
+    accessorKey: 'bookedRoom.roomName',
+    header: 'Espace Réservé'
   },
   {
-    accessorKey: 'phone',
+    accessorKey: 'message',
+    header: 'Message',
+    
+  },
+  {
+    accessorKey: 'bookedBy.phone',
     header: 'Numéro de Téléphone',
     
   },
   {
-    accessorKey: 'email',
-    header: 'Email'
+    accessorKey: 'checkInDate',
+    header: `Date d'Arrivée`
   },
   {
-    accessorKey: 'role',
-    header: 'Rôle'
+    accessorKey: 'checkOutDate',
+    header: 'Date de Départ',
+    
   },
   {
-    accessorKey: 'createdAt',
-    header: 'Compte créé le',
+    accessorKey: 'bookedDate',
+    header: 'Date de Réservation',
     cell: ({ row }) => {
-      const date = new Date(row.getValue('createdAt'))
+      const date = new Date(row.getValue('bookedDate'))
       const formatted = date.toLocaleDateString()
       return <div className='font-medium'>{formatted}</div>
     }
+  },
+  {
+    accessorKey: 'status',
+    header: 'status'
   },
   {
     id: 'actions',
@@ -69,7 +79,7 @@ export const columns: ColumnDef<any>[] = [
           <DropdownMenuContent align='end'>
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(user.id)}
+              onClick={() => navigator.clipboard.writeText(user._id)}
             >
               Copy user ID
             </DropdownMenuItem>

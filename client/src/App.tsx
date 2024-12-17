@@ -7,6 +7,8 @@ import DetailEspace from "./pages/DetailEspace";
 import Dashboard from "./admin/pages/Dashboard";
 import "./index.css"
 import UsersList from "./admin/pages/UsersList";
+import BookingList from "./admin/pages/BookingList";
+import RoomList from "./admin/pages/RoomList";
 
 
 
@@ -28,7 +30,8 @@ function App() {
       {/* Routes admin avec layout */}
       <Route path="/admin" element={<Dashboard />}>
         <Route path="users" element={<UsersList/>} />
-        {/* Ajoutez d'autres pages admin ici */}
+        <Route  path="booking" element={<BookingList/>} />
+        <Route  path="space"  element={<RoomList/>}/>
       </Route>
     </Routes>
     </>

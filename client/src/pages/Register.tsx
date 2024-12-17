@@ -21,12 +21,13 @@ const Register = () => {
     mode: "onChange",
     resolver: zodResolver(signupSchema)
   });
-  const onSubmit: SubmitHandler<ISignup> = async ({name, lastname, email, password}) => {
+  const onSubmit: SubmitHandler<ISignup> = async ({name, lastname, email, password, phone}) => {
     // sending data to backend api
     const user = {
       name,
       lastname,
       email,
+      phone,
       password
     }    
     try {
@@ -68,6 +69,7 @@ const Register = () => {
     { type: "text", placeholder: "Enter votre nom", register: register("name"), error: errors.name },
     { type: "text", placeholder: "Enter votre Prénon", register: register("lastname"), error: errors.lastname},
     { type: "email", placeholder: "Enter votre email", register: register("email"), error: errors.email},
+    { type: "phone", placeholder: "Enter votre numéro de téléphone", register: register("phone"), error: errors.phone},
     { type: "password", placeholder: "Enter votre mot de passe", register: register("password"), error: errors.password },
     { type: "password", placeholder: "Confirmer votre mot de passe", register: register("confirm_password"), error: errors.confirm_password },
   ]
