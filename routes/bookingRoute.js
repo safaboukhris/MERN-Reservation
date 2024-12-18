@@ -29,4 +29,9 @@ router.delete(
   bookingController.deleteBooking
 )
 
+router.patch(
+  "/booking/:id",
+  passport.authenticate("jwt", { session: false }),
+  bookingController.updateBooking
+)
 module.exports.bookingRoute = router

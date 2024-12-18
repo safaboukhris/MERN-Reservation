@@ -87,5 +87,41 @@ const deleteBooking = async(req, res) => {
     
 }
 
+const updateBooking = async (req, res) => {
+    try {
+        const user = req.user;
 
-module.exports.bookingController = {addBooking, getBookings, deleteBooking, getAdminBooking};
+        // Vérification que l'utilisateur est un admin
+        if (!user || user.role !== "admin") {
+            return res.status(403).json({ msg: "Access denied. Only admins can update booking status." });
+        }
+
+        const { id } = req.params; 
+        const { status } = req.body; 
+
+        // Validation du champ `status`
+        const validStatuses = ["pending", "Cancel", "confirm"];
+        if (!validStatuses.includes(status)) {
+            return res.status(400).json({ msg: `Invalid status. Allowed values: ${validStatuses.join(", ")}` });
+        }
+
+        // Mise à jour du statut de la réservation
+        const updatedBooking = await bookingModel.findOneAndUpdate(
+            { _id: id },
+            { $set: { status } },
+            { new: true }
+        );
+
+        if (!updatedBooking) {
+            return res.status(404).json({ msg: "Booking not found" });
+        }
+
+        return res.status(200).json({ msg: "Booking status updated", updatedBooking });
+    } catch (error) {
+        console.error("Error updating booking:", error.message, error.stack);
+        return res.status(500).json({ err: "Server Error Occurred" });
+    }
+};
+
+
+module.exports.bookingController = {addBooking, getBookings, deleteBooking, getAdminBooking, updateBooking};

@@ -20,5 +20,16 @@ router.get(
     roomController.getRoomById
 )
 
+router.delete(
+    "/deleteroom/:id",
+    passport.authenticate("jwt", { session: false }),
+    roomController.deleteroom
+)
+
+router.patch(
+    "/updateroom/:id",
+    passport.authenticate("jwt", { session: false }),
+    roomController.updatedroom
+)
 
 module.exports.roomRoute = router;

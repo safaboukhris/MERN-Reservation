@@ -61,4 +61,35 @@ const getRoomById = async (req, res) =>{
     }
 }
 
-module.exports.roomController = { addRoom , getRooms, getRoomById};
+//delete room 
+const deleteroom = async (req,res) => {
+    try{
+    const id = req.params.id
+    const roomdeleted = await roomModel.deleteOne({_id : id})
+    return res.status(200).json({ msg: "room deleted", roomdeleted })
+    }catch(error){
+        console.error(error);
+        return res.status(500).json({ err: "Server Error Occurred" });
+    }
+}
+
+//update room
+const updatedroom = async (req,res) => {
+    try{
+        const updateroom = await roomModel.findOneAndUpdate(
+            {_id : req.params.id},
+            { $set: {...req.body} },
+            { new : true }
+        );
+        if (!updateroom) {
+            return res.status(404).json({ msg: "Room not found" });
+        }
+        return  res.status(200).json({msg: "Room updated", updateroom})
+
+    }catch(error){
+        console.error(error);
+        return res.status(500).json({ err: "Server Error Occurred" });
+    }
+}
+
+module.exports.roomController = { addRoom , getRooms, getRoomById, deleteroom, updatedroom};

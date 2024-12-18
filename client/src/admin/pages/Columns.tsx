@@ -69,7 +69,7 @@ export const columns: ColumnDef<any>[] = [
           <DropdownMenuContent align='end'>
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
             <DropdownMenuItem
-              onClick={() => navigator.clipboard.writeText(user.id)}
+              onClick={() => navigator.clipboard.writeText(user._id)}
             >
               Copy user ID
             </DropdownMenuItem>
