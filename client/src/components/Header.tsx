@@ -13,8 +13,6 @@ const Header = () => {
     const navigate = useNavigate();
     const token = localStorage.getItem('authToken')
     const user = localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")!) : null;
-        console.log("my user is:::",user)
-        // console.log("my role ::", user.role)
 
          // Fonction pour se déconnecter
   const handleSignOut = () => {

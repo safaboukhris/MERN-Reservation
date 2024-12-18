@@ -67,21 +67,21 @@ export function DataTable<TData, TValue>({
       {/* Filters */}
 
       <div className='flex items-center justify-between'>
-        <div className='flex items-center py-4'>
+        <div className='flex items-center py-4 '>
           <Input
             placeholder='Rechercher par nom...'
             value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
             onChange={event =>
               table.getColumn('name')?.setFilterValue(event.target.value)
             }
-            className='max-w-sm'
+            className='max-w-sm border border-[#1e2431] placeholder:text-[#1e2431]'
           />
         </div>
 
         {/* Column visibility */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant='outline' className='ml-auto'>
+            <Button variant='outline' className='ml-auto bg-[#1e2431] text-white rounded-md'>
               Columns
             </Button>
           </DropdownMenuTrigger>
@@ -113,7 +113,7 @@ export function DataTable<TData, TValue>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map(header => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} className='capitalize bg-[#1e2431] text-white py-2'>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -162,6 +162,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant='outline'
           size='sm'
+          className='bg-[#1e2431] text-white rounded-md'
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
@@ -170,6 +171,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant='outline'
           size='sm'
+          className='bg-[#1e2431] text-white rounded-md'
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >

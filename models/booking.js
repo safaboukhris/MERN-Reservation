@@ -29,7 +29,7 @@ const bookingSchema = new schema({
     },
     status: {
         type: String,
-        enum: ["pending", "Cancel", "confirm"],
+        enum: ["pending", "cancel", "confirm"],
         default: "pending", 
     }
 })

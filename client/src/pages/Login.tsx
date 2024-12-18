@@ -48,9 +48,11 @@ const Login = () => {
         alert("Utilisateur non trouvé.");
       } else if (response.status === 200) {
         const { token, user } = response.data;
-  
+        const { password, ...userWithoutPassword } = user; // Exclure le mot de passe
+          // console.log(userWithoutPassword)
           localStorage.setItem("authToken", token);
-          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("user", JSON.stringify(userWithoutPassword));
+
         // Redirection basée sur le rôle
         if (user.role === "admin") {
           navigate("/admin");

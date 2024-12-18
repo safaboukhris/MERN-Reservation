@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { DataTable } from '../components/DataTable'
 import { columns } from './Columns'
 import { fetchData } from '@/utils/axiosInstance'
+import { UsersRound } from 'lucide-react'
 
 
 const UsersList = () => {
@@ -34,9 +35,12 @@ const UsersList = () => {
     if (error) return <p>{error}</p>
 
     return (
-        <section className="py-24">
+        <section className="py-8">
             <div className="w-full">
-                <h1 className="mb-6 text-3xl font-bold">All Users</h1>
+                <div className='flex gap-4'>
+                    <UsersRound size={32}  color="#1e2431"/>
+                    <h1 className="mb-14 text-3xl font-bold text-[#1e2431] font-[YujiMai]" >Annuaire des Utilisateurs</h1>
+                </div>
                 {data && <DataTable columns={columns} data={data} />}
             </div>
         </section>

@@ -12,7 +12,7 @@ const axiosInstance: AxiosInstance = axios.create({
 // Fonction générique pour effectuer des requêtes HTTP
 const fetchData = async (
     url: string, 
-    method: 'GET' | 'POST' | 'PUT' | 'DELETE',
+    method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH',
     body: any = null, 
     headers: any = null
     ) => {
@@ -22,7 +22,7 @@ const fetchData = async (
             throw new Error('URL is required');
         }
 
-        if (!['GET', 'POST', 'PUT', 'DELETE'].includes(method)) {
+        if (!['GET', 'POST', 'PUT', 'DELETE', 'PATCH'].includes(method)) {
             throw new Error(`Invalid HTTP method: ${method}`);
         }
         const config: AxiosRequestConfig = {

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { fetchData } from '@/utils/axiosInstance'
 import { columns } from './ColumnsHistory'
 import { DataTable } from '../components/DataTable'
+import { CalendarCheck } from 'lucide-react'
 
 const BookingList = () => {
 
@@ -14,7 +15,7 @@ const BookingList = () => {
         const fetchReservation = async () => {
             try {
                 const res = await fetchData('/api/get-all-history', 'GET', {}, { Authorization: `Bearer ${token}` });
-                console.log(res.data.history)
+                // console.log(res.data.history)
                 if (res.status === 200) {
                     setData(res.data.history);
                 } else {
@@ -35,9 +36,12 @@ const BookingList = () => {
     if (error) return <p>{error}</p>
 
     return (
-        <section className="py-24">
+        <section className="py-8">
             <div className="w-full">
-                <h1 className="mb-6 text-3xl font-bold">all reservations</h1>
+                <div className='flex gap-4'>
+                    <CalendarCheck size={32} color="#1e2431" />
+                    <h1 className="mb-14 text-3xl font-bold text-[#1e2431] font-[YujiMai]">Historique des Réservations</h1>
+                </div>
                     {data && <DataTable columns={columns} data={data} />}
                 </div>
         </section>

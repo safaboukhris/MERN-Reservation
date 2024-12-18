@@ -59,4 +59,35 @@ const getUsers = async ( req, res ) => {
     }
 }
 
-module.exports.authController = { register, login , getUsers}
+//Delete account user 
+const deleteAcount = async (req, res) => {
+    try{
+        const id = req.params.id
+        const userdeleted = await userModel.deleteOne({_id : id})
+        return res.status(200).json({ msg: "User deleted successfully", userdeleted})
+
+    }catch(error){
+        console.error(error);
+        return res.status(500).json({ err: "Server Error Occurred" });
+    }
+}
+
+//update account user
+const updateAccount = async (req, res) => {
+    try{
+    const userupdated = await userModel.findOneAndUpdate(
+        {_id : req.params.id},
+        { $set: {...req.body} },
+        { new : true }
+    );
+    if (!userupdated ) {
+        return res.status(404).json({ msg: "user not found" });
+    }
+    return  res.status(200).json({msg: "Account user updated", userupdated})
+    }catch(error){
+    console.error(error);
+    return res.status(500).json({ err: "Server Error Occurred" });
+    }
+}
+
+module.exports.authController = { register, login , getUsers, updateAccount, deleteAcount }
