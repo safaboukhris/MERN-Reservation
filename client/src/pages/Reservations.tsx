@@ -79,7 +79,7 @@ const Reservations = () => {
                                                 : "text-red-600"
                                                 }`}
                                             >
-                                            <span className="text-gray-800">Status : </span> {item.status}
+                                            {item.status}
                                             </p>
                                         </div>
                                     </div>

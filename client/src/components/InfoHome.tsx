@@ -1,7 +1,7 @@
 const InfoHome = () => {
     return (
     <>
-      <div className="relative h-[90vh] bg-gray-100" >
+      <div className="relative h-[90vh] bg-gray-100" id="qui-somme-nous">
         <div className="absolute inset-0 flex flex-col justify-center items-center p-10">
         <h4 className=" font-extrabold text-2xl  text-gray-800">Pour quoi choisissez</h4>
                 <h2 className=" text-8xl text-[#154849] my-5 ">RB Coworking Space</h2>

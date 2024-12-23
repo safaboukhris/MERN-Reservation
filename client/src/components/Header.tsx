@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col px-10 py-2  z-20 bg-transparent sticky top-0 shadow-md ">
+    <div className='flex flex-col px-10 py-2 z-20 sticky top-0 bg-black/15 shadow-lg'>
       <div className="flex justify-between items-center">
         <Link to={"/"}>
           <div className="flex justify-center items-center gap-2">
@@ -35,11 +35,20 @@ const Header = () => {
         <div className="flex justify-center items-center gap-8">
           {token ? (
             // Icône utilisateur si le token existe
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 font-bold">
               
-              <Link to="/history"><span className=" text-gray-100 mx-10   text-lg" >SERVICES</span></Link>
-              <Link to="/history"><span className=" text-gray-100 mx-10   text-lg" >CONTACT</span></Link>
-              <Link to="/history"><span className=" text-gray-100 mx-10   text-lg" >HISTORIQUE</span></Link>
+              <a href='#qui-somme-nous'>
+                <span className=' text-gray-100 mx-10  text-md'>
+                  QUI SOMME NOUS
+                </span>
+              </a>
+              <a href='#services'>
+                <span className=' text-gray-100 mx-10 text-md'>
+                  SERVICES
+                </span>
+              </a>
+              <Link to="/history"><span className=" text-gray-100 mx-10  text-md" >CONTACT</span></Link>
+              <Link to="/history"><span className=" text-gray-100 mx-10  text-md" >HISTORIQUE</span></Link>
               <Bell size={32}  className="cursor-pointer text-gray-100 mr-4"/>
               <DropdownMenu>
                 <DropdownMenuTrigger><CircleUser size={32}  className="cursor-pointer text-gray-100" /></DropdownMenuTrigger>

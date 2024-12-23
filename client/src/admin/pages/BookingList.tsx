@@ -3,7 +3,7 @@ import { fetchData } from '@/utils/axiosInstance'
 import { columns } from './ColumnsHistory'
 import { DataTable } from '../components/DataTable'
 import { CalendarCheck } from 'lucide-react'
-
+import { FadeLoader } from 'react-spinners';
 const BookingList = () => {
 
     const token = localStorage.getItem("authToken")
@@ -32,7 +32,9 @@ const BookingList = () => {
     }, []);
     
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <div className='flex justify-center items-center min-h-screen'>
+                            <FadeLoader color='#154849' loading={true} size={80} />
+                        </div>
     if (error) return <p>{error}</p>
 
     return (

@@ -170,19 +170,19 @@ export const columns: ColumnDef<any>[] = [
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Détails de la réservation</DialogTitle>
+                <DialogTitle className='text-[#154849] text-2xl'>Détails de la réservation</DialogTitle>
               </DialogHeader>
-              <div className="space-y-4">
-                <p>
-                  <strong>Message :</strong> {user.message}
+              <div className="space-y-4 b-4">
+                <p className='mb-4'>
+                  <strong >Message :</strong> {user.message}
                 </p>
-                <p>
-                  <strong>Check-in :</strong> {new Date(user.checkInDate).toLocaleString()}
+                <p className='mb-4'>
+                  <strong >Check-in :</strong> {new Date(user.checkInDate).toLocaleString()}
                 </p>
-                <p>
-                  <strong>Check-out :</strong> {new Date(user.checkOutDate).toLocaleString()}
+                <p className='mb-4'>
+                  <strong >Check-out :</strong> {new Date(user.checkOutDate).toLocaleString()}
                 </p>
-                <p>
+                <p className='mb-4'>
                   <strong>Numéro de téléphone :</strong> {user.bookedBy.phone}
                 </p>
               </div>

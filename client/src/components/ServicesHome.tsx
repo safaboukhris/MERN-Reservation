@@ -1,6 +1,7 @@
 import { fetchData } from "@/utils/axiosInstance";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FadeLoader } from 'react-spinners';
 import {
     Carousel,
     CarouselContent,
@@ -71,7 +72,7 @@ const ServicesHome = () => {
     }, []);
 
     return (
-        <div className="mb-[8%]">
+        <div className="mb-[8%]" id="services">
             <h3 className="text-[#154849] font-extrabold text-6xl text-center mt-[20%] w-[60%] mx-auto">
                 Trouvez l'environnement de travail qui vous motive
             </h3>
@@ -92,7 +93,9 @@ const ServicesHome = () => {
                         <CarouselNext />
                     </Carousel>
                 ) : (
-                    <p className="text-center text-gray-600 text-lg">loading...</p>
+                    <div className='flex justify-center items-center min-h-screen'>
+                        <FadeLoader color='#154849' loading={true} size={80} />
+                    </div>
                 )}
             </div>
         </div>
