@@ -72,7 +72,7 @@ const ServicesHome = () => {
 
     return (
         <div className="mb-[8%]">
-            <h3 className="text-[#154849] font-[YujiMai] font-extrabold text-6xl text-center mt-[20%] w-[60%] mx-auto">
+            <h3 className="text-[#154849] font-extrabold text-6xl text-center mt-[20%] w-[60%] mx-auto">
                 Trouvez l'environnement de travail qui vous motive
             </h3>
             <div className="mt-20 mx-auto p-4 w-[85%]">

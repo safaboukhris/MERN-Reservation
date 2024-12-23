@@ -37,9 +37,9 @@ const Header = () => {
             // Icône utilisateur si le token existe
             <div className="flex items-center gap-2">
               
-              <Link to="/history"><span className=" text-gray-100 mx-10  font-[YujiMai] text-xl" >SERVICES</span></Link>
-              <Link to="/history"><span className=" text-gray-100 mx-10  font-[YujiMai] text-xl" >CONTACT</span></Link>
-              <Link to="/history"><span className=" text-gray-100 mx-10  font-[YujiMai] text-xl" >HISTORIQUE</span></Link>
+              <Link to="/history"><span className=" text-gray-100 mx-10   text-lg" >SERVICES</span></Link>
+              <Link to="/history"><span className=" text-gray-100 mx-10   text-lg" >CONTACT</span></Link>
+              <Link to="/history"><span className=" text-gray-100 mx-10   text-lg" >HISTORIQUE</span></Link>
               <Bell size={32}  className="cursor-pointer text-gray-100 mr-4"/>
               <DropdownMenu>
                 <DropdownMenuTrigger><CircleUser size={32}  className="cursor-pointer text-gray-100" /></DropdownMenuTrigger>

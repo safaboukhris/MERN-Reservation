@@ -40,7 +40,7 @@ const BookingList = () => {
             <div className="w-full">
                 <div className='flex gap-4'>
                     <CalendarCheck size={32} color="#1C2434" />
-                    <h1 className="mb-14 text-3xl font-extrabold text-[#1C2434] font-[YujiMai]">Historique des Réservations</h1>
+                    <h1 className="mb-14 text-3xl font-extrabold text-[#1C2434] ">Historique des Réservations</h1>
                 </div>
                     {data && <DataTable columns={columns} data={data} />}
                 </div>

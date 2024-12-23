@@ -39,7 +39,7 @@ const UsersList = () => {
             <div className="w-full">
                 <div className='flex gap-4'>
                     <UsersRound size={32}  color="#1C2434"/>
-                    <h1 className="mb-14 text-3xl font-extrabold text-[#1C2434] font-[YujiMai]" >Annuaire des Utilisateurs</h1>
+                    <h1 className="mb-14 text-3xl font-extrabold text-[#1C2434]" >Annuaire des Utilisateurs</h1>
                 </div>
                 {data && <DataTable columns={columns} data={data} />}
             </div>

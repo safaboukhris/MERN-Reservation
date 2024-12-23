@@ -17,10 +17,10 @@ const Home = () => {
       <div className="relative z-10">
         <Header />
         <h1 className="text-white text-center text-7xl mb-[8%] mt-[6%]">RB COWORKING SPACE</h1>
-        <p className="text-white text-center font-semibold mt-8 font-[YujiMai] text-3xl w-[60%] mx-auto">
+        <p className="text-white text-center font-semibold mt-8  text-3xl w-[60%] mx-auto">
           RB Coworking Space est un espace de travail moderne situé à Teboulba, Monastir, conçu pour répondre aux besoins des professionnels, entrepreneurs, et travailleurs indépendants.
         </p>
-        <p className="text-white text-center font-semibold mt-5 font-[YujiMai] text-3xl w-[60%] mx-auto">
+        <p className="text-white text-center font-semibold mt-5  text-3xl w-[60%] mx-auto">
           Offrant une variété d'espaces, tels que des bureaux individuels, des salles de réunion et des chaises individuelles.
         </p>
       </div>

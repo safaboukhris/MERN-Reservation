@@ -48,8 +48,12 @@ const ButtonBookingRight = ({ className }: { className?: string }) => {
         <>
             <Dialog>
                 <DialogTrigger>
-                    <button className={`hover:bg-[#f5debf] ${className}`}>
-                        <img src="chaiseRight.png" className="w-14 h-14 object-contain" />
+                    <button className={`${className} group`}>
+                        <img
+                            src="chaiseRight.png"
+                            className="w-14 h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+                            alt="Chaise"
+                        />
                     </button>
                 </DialogTrigger>
                 <DialogContent>

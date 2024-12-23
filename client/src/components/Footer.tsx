@@ -52,17 +52,6 @@ const Footer = () => {
         <p className="text-xl italic text-gray-300">Email: rbitsolutions55@gmail.com</p>
       </div>
       </div>
-      {/* <div className="flex space-x-4 mt-4">
-        <a href="#" className="hover:text-gray-400">
-          <Facebook size={36} />
-        </a>
-        <a href="#" className="hover:text-gray-400">
-          <Twitter size={36} />
-        </a>
-        <a href="#" className="hover:text-gray-400">
-          <Linkedin size={36} />
-        </a>
-      </div> */}
     </div>
   </div>
 </div>

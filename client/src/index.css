@@ -104,3 +104,19 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+
+
+/* / Définir la police par défaut pour tout le texte / */
+body {
+  font-family: 'Raleway', sans-serif;  
+}
+
+/* / Personnaliser les titres (h1, h2, h3) avec une autre police / */
+h1, h2, h3 {
+  font-family: 'RocknRoll One', sans-serif; 
+}
+
+/* / Personnaliser les paragraphes et autres éléments de texte / */
+/* p, li, span {
+  font-family: 'Edu AU VIC WA NT Hand', cursive;  
+} */
