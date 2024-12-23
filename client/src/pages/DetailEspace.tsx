@@ -65,7 +65,7 @@ const DetailEspace = () => {
                             <Users size={42} strokeWidth={2.5} />
                             <span className="font-semibold text-gray-800 ">Capacité :</span>
                         </div>
-                            <span>{room.roomCapacity} personnes</span>
+                            <span>{room.roomCapacity} personnes / room</span>
                     </div>
                     <div className="flex items-center gap-2  mx-8 text-gray-600 border-2 rounded-3xl p-8 h-full w-[70%] hover:bg-[#ff861a]">
                         <div className="flex items-center gap-2">
