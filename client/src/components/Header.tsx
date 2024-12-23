@@ -22,24 +22,29 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col px-10 py-2 relative z-20 ">
+    <div className="flex flex-col px-10 py-2  z-20 bg-transparent sticky top-0 shadow-md ">
       <div className="flex justify-between items-center">
         <Link to={"/"}>
-          <div className="flex justify-center items-center gap-5">
-            <img src="/logo.png" alt="rb-coworking-space" width={60}/>
-            <h1 className="text-2xl font-[kablammo] text-[#ff861a]">RB-Coworking-space</h1>
+          <div className="flex justify-center items-center gap-2">
+              <img src="/logo.png" alt="rb-coworking-space" width={60}/> 
+              <h3 className="text-gray-200 italic text-sm"> La Foce Collective ... <h1 className="text-2xl  text-gray-200 italic">RB Coworking-space</h1>
+              </h3>
           </div>
+
         </Link>
         <div className="flex justify-center items-center gap-8">
           {token ? (
             // Icône utilisateur si le token existe
             <div className="flex items-center gap-2">
-              <Link to="/history"><span className=" text-[#ff861a] mx-10  font-[YujiMai] text-xl" >HISTORIQUE</span></Link>
-              <Bell size={32}  className="cursor-pointer text-[#ff861a] mr-4"/>
+              
+              <Link to="/history"><span className=" text-gray-100 mx-10  font-[YujiMai] text-xl" >SERVICES</span></Link>
+              <Link to="/history"><span className=" text-gray-100 mx-10  font-[YujiMai] text-xl" >CONTACT</span></Link>
+              <Link to="/history"><span className=" text-gray-100 mx-10  font-[YujiMai] text-xl" >HISTORIQUE</span></Link>
+              <Bell size={32}  className="cursor-pointer text-gray-100 mr-4"/>
               <DropdownMenu>
-                <DropdownMenuTrigger><CircleUser size={32}  className="cursor-pointer text-[#ff861a]" /></DropdownMenuTrigger>
+                <DropdownMenuTrigger><CircleUser size={32}  className="cursor-pointer text-gray-100" /></DropdownMenuTrigger>
                   <DropdownMenuContent>
-                    <DropdownMenuLabel className="text-[#f1a83a]">{user?.name}</DropdownMenuLabel>
+                    <DropdownMenuLabel className="text-[#154849]">{user?.name}</DropdownMenuLabel>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem className="cursor-pointer" onClick={()=>{navigate("/")}}>
                       Mon compte

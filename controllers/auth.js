@@ -79,7 +79,7 @@ const updateAccount = async (req, res) => {
         {_id : req.params.id},
         { $set: {...req.body} },
         { new : true }
-    );
+    ).select('-password');
     if (!userupdated ) {
         return res.status(404).json({ msg: "user not found" });
     }

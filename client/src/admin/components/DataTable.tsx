@@ -67,21 +67,21 @@ export function DataTable<TData, TValue>({
       {/* Filters */}
 
       <div className='flex items-center justify-between'>
-        <div className='flex items-center py-4 '>
+        <div className='flex items-center py-6 '>
           <Input
             placeholder='Rechercher par nom...'
             value={(table.getColumn('name')?.getFilterValue() as string) ?? ''}
             onChange={event =>
               table.getColumn('name')?.setFilterValue(event.target.value)
             }
-            className='max-w-sm border border-[#1e2431] placeholder:text-[#1e2431]'
+            className='max-w-sm border border-[#1e2431] placeholder:text-[#1e2431] pr-16 w-[450px] py-6'
           />
         </div>
 
         {/* Column visibility */}
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant='outline' className='ml-auto bg-[#1e2431] text-white rounded-md'>
+            <Button variant='outline' className='ml-auto bg-[#1e2431] text-white rounded-md py-6'>
               Columns
             </Button>
           </DropdownMenuTrigger>
@@ -106,14 +106,14 @@ export function DataTable<TData, TValue>({
       </div>
 
       {/* Table */}
-      <div className='rounded-md border w-full'>
+      <div className='rounded-md border w-full bg-white'>
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map(headerGroup => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map(header => {
                   return (
-                    <TableHead key={header.id} className='capitalize bg-[#1e2431] text-white py-2'>
+                    <TableHead key={header.id} className='capitalize font-bold text-white bg-[#937D64] p-1 text-center '>
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -126,15 +126,16 @@ export function DataTable<TData, TValue>({
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
+          <TableBody >
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map(row => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && 'selected'}
+                  
                 >
                   {row.getVisibleCells().map(cell => (
-                    <TableCell key={cell.id}>
+                    <TableCell key={cell.id} className='py-8 text-xl font-[YujiMai] text-[#154849] text-center'>
                       {flexRender(
                         cell.column.columnDef.cell,
                         cell.getContext()
@@ -162,7 +163,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant='outline'
           size='sm'
-          className='bg-[#1e2431] text-white rounded-md'
+          className='bg-[#1e2431] text-white rounded-md py-6'
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
@@ -171,7 +172,7 @@ export function DataTable<TData, TValue>({
         <Button
           variant='outline'
           size='sm'
-          className='bg-[#1e2431] text-white rounded-md'
+          className='bg-[#1e2431] text-white rounded-md py-6'
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >

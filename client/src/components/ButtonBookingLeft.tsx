@@ -24,7 +24,7 @@ import { useLocation, useNavigate } from "react-router-dom"
 
 
 
-const ButtonBooking = ({ className }: { className?: string }) => {
+const ButtonBookingLeft = ({ className }: { className?: string }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const search = new URLSearchParams(location.search);
@@ -49,7 +49,7 @@ const ButtonBooking = ({ className }: { className?: string }) => {
             <Dialog>
                 <DialogTrigger>
                     <button className={`hover:bg-[#f5debf] ${className}`}>
-                        <img src="chaise.png" className="w-14 h-164 object-contain" />
+                        <img src="chaiseLeft.png" className="w-16 h-16 object-contain" />
                     </button>
                 </DialogTrigger>
                 <DialogContent>
@@ -106,4 +106,4 @@ const ButtonBooking = ({ className }: { className?: string }) => {
     )
 }
 
-export default ButtonBooking
+export default ButtonBookingLeft

@@ -1,6 +1,6 @@
 import { ColumnDef } from '@tanstack/react-table'
 
-import { MoreHorizontal, ArrowUpDown } from 'lucide-react'
+import { MoreHorizontal, ArrowUpDown, CircleUserRound,  } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -13,27 +13,49 @@ import {
 
 
 export const columns: ColumnDef<any>[] = [
-    {
+  {
     accessorKey: 'name',
     header: ({ column }) => {
       return (
         <Button
-          variant='ghost'
+          variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
           Utilisateur
-          <ArrowUpDown className='ml-2 h-4 w-4' />
+          <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
-      )
+      );
+    },
+    cell: ({ row }) => {
+      const bookedBy = row.getValue('name'); 
+      const userName = bookedBy || 'Utilisateur inconnu';       
+      return (
+        <div className="flex items-center gap-2 flex-col">
+          <CircleUserRound color="#595959" className="mb-1" size={32} /> 
+          <span>{userName}</span>
+        </div>
+      );
+    }
+  },
+  
+  {
+    accessorKey: 'lastname',
+    header: 'Nom de famille',
+    cell: ({ row }) => {
+      const bookedBy = row.getValue('lastname'); 
+      const userName = bookedBy || 'Utilisateur inconnu'; 
+      
+      return (
+        <div className="flex items-center gap-2 flex-col">
+          <CircleUserRound color="#595959" className="mb-1" size={32} /> 
+          <span>{userName}</span>
+        </div>
+      );
     }
   },
   {
-    accessorKey: 'lastname',
-    header: 'Nom de famille'
-  },
-  {
     accessorKey: 'phone',
-    header: 'Numéro de Téléphone',
+    header: 'Num Tél',
     
   },
   {
@@ -48,10 +70,20 @@ export const columns: ColumnDef<any>[] = [
     accessorKey: 'createdAt',
     header: 'Compte créé le',
     cell: ({ row }) => {
-      const date = new Date(row.getValue('createdAt'))
-      const formatted = date.toLocaleDateString()
-      return <div className='font-medium'>{formatted}</div>
-    }
+      const date = new Date(row.getValue('createdAt'));
+      // Formatting the date to include time (hour and minute)
+      const formatted = date.toLocaleString('fr-FR', {
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false, // 24-hour format
+      });
+      const formattedWithDash = formatted.replace(/(\d{4})/, '$1-');
+      return <div className="font-medium">{formattedWithDash}</div>;
+    },
+    
   },
   {
     id: 'actions',

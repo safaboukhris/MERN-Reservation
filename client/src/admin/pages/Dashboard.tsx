@@ -8,7 +8,7 @@ const DashboardLayout = () => {
         <SidebarProvider >
             <div className="flex h-screen w-full">
                 <AppSidebar />
-                    <main className="flex-1 p-4">
+                    <main className="flex-1 p-4 ml-16">
                         <SidebarTrigger />
                             {/* Render the child routes */}
                         <Outlet />
