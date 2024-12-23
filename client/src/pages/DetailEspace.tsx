@@ -39,41 +39,37 @@ const DetailEspace = () => {
             >
             </div> 
             <div className="flex flex-col items-center justify-center ">  
-                <h2  className="absolute bottom-8 left-[40%] text-4xl font-semibold text-[#7e4717] mb-6 text-start font-[YujiMai]">
+                <h2  className=" text-6xl font-semibold text-[#154849] text-start font-[YujiMai] mt-[12vh]">
                     {room.roomName}
                 </h2>
-                <p className="text-lg text-gray-600 mb-2 text-center md:text-left flex gap-4 w-[70%] mx-auto mt-16">
+                <p className="text-lg text-gray-600 mb-2 text-center md:text-left flex gap-4 w-[50%] mx-auto mt-16">
                     {room.roomDescription}
                 </p>
             </div> 
-
-            <div className="grid grid-cols-2 gap-10  items-center p-8  md:flex-row  md:items-center rounded-lg  mb-6 space-y-4 md:space-y-0">
-                {/* Description Section */}
-                <div className="  p-8 md:mr-6 ">
-                {/* <h2 className="text-4xl font-semibold text-[#7e4717] mb-6 text-start mt-8 font-[YujiMai]" >{room.roomName}</h2> */}
-                    {/* <div className="text-lg text-gray-600 mb-2 text-center md:text-left flex gap-4">
-                        <div><BookOpenText size={42} strokeWidth={2.5} /></div><div>{room.roomDescription}</div>
-                    </div> */}
-                </div>
                {/* Details Section */}
-                <div className="flex flex-col space-y-3 items-center md:space-y-4 ">
-                    <div className="flex items-center gap-2  mx-8 text-gray-600 border-2 rounded-3xl p-8 h-[70%] w-[50%] hover:bg-[#ff861a]">
-                        <House size={42} strokeWidth={2.5} />
-                        <span className="font-semibold text-gray-800 mr-2 ml-2">Type :</span>
-                        <span>{room.roomType}</span>
+                <div className="grid grid-cols-3 space-y-3 w-[80%] mx-auto items-center md:space-y-4 mt-16 mb-56 border h-[40%]">
+                    <div className="flex items-center gap-2  mx-8 text-gray-600 border-2 rounded-3xl p-8 h-full w-[70%] hover:bg-[#ff861a]">
+                        <div className="flex items-center gap-2">
+                            <House size={42} strokeWidth={2.5} />
+                            <span className="font-semibold text-gray-800 ">Type :</span>
+                        </div>
+                            <span>{room.roomType}</span>
                     </div>
-                    <div className="flex items-center gap-2 mx-8 text-gray-600 border-2 rounded-3xl p-8 h-[70%] w-[50%] hover:bg-[#ff861a]">
-                        <Users size={42} strokeWidth={2.5} />
-                        <span className="font-semibold text-gray-800 mr-2">Capacité :</span>
-                        <span>{room.roomCapacity} personnes</span>
+                    <div className="flex items-center gap-2  mx-8 text-gray-600 border-2 rounded-3xl p-8 h-full w-[70%] hover:bg-[#ff861a]">
+                        <div className="flex items-center gap-2">
+                            <Users size={42} strokeWidth={2.5} />
+                            <span className="font-semibold text-gray-800 ">Capacité :</span>
+                        </div>
+                            <span>{room.roomCapacity} personnes</span>
                     </div>
-                    <div className="flex items-center gap-2 mx-8 text-gray-600 border-2 rounded-3xl p-8 h-[70%] w-[50%] hover:bg-[#ff861a]">
-                        <Coins size={42} strokeWidth={2.5} />
-                        <span className="font-semibold text-gray-800 mr-2">Prix :</span>
-                        <span>{room.roomPrice} DT / personne</span>
+                    <div className="flex items-center gap-2  mx-8 text-gray-600 border-2 rounded-3xl p-8 h-full w-[70%] hover:bg-[#ff861a]">
+                        <div className="flex items-center gap-2">
+                            <Coins size={42} strokeWidth={2.5} />
+                            <span className="font-semibold text-gray-800 ">Prix :</span>
+                        </div>
+                        <span>{room.roomPrice} personne</span>
                     </div>
                 </div>
-            </div>
             <TableConception />
             <br/>
             <br/>
