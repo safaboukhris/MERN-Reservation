@@ -35,7 +35,7 @@ const Home = () => {
       </div>
     </div>
     <BoxInfo />
-    <div className="mt-[30vh]">
+    <div className="mt-[60vh]">
       <ServicesHome />
     </div>
     <InfoHome />

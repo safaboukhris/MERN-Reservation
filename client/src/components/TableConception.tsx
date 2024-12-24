@@ -15,11 +15,11 @@ const TableConception = () => {
                         <ButtonBooking className="top absolute -top-14 left-1/2 transform -translate-x-1/2"/>
                         <ButtonBooking className="top absolute -top-12 left-1/4 transform -translate-x-1/2"/>
                         <ButtonBooking className="top absolute -top-12 left-3/4 transform -translate-x-1/2"/>
-                        <ButtonBookingRight className="right absolute -right-12 top-1/2 transform -translate-y-1/2"/>
+                        <ButtonBookingRight className="right absolute -right-12 top-1/2 transform -translate-y-1/2 -mr-3"/>
                         <ButtonBookingBas className="bottom absolute -bottom-14 left-1/2 transform -translate-x-1/2"/>
                         <ButtonBookingBas className="bottom absolute -bottom-12 left-1/4 transform -translate-x-1/2"/>
                         <ButtonBookingBas className="bottom absolute -bottom-12 left-3/4 transform -translate-x-1/2"/>
-                        <ButtonBookingLeft className="left absolute -left-12 top-1/2 transform -translate-y-1/2"/>
+                        <ButtonBookingLeft className="left absolute -left-12 top-1/2 transform -translate-y-1/2 -ml-3"/>
                     </div>
             </div>
         </>

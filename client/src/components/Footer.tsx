@@ -51,8 +51,11 @@ const Footer = () => {
         <Mail size={32} />
         <p className="text-xl italic text-gray-300">Email: rbitsolutions55@gmail.com</p>
       </div>
-      </div>
     </div>
+    </div>
+    <div >
+        <h4 >Copyright &copy; 2024</h4>
+      </div>
   </div>
 </div>
     )
