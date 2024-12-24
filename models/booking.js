@@ -11,6 +11,11 @@ const bookingSchema = new schema({
         ref:'room',
         required: true
     },
+    bookedChaise: { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'chaise', 
+        required: true
+    },
     bookedDate:{
         type:Date,
         default:Date.now

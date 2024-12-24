@@ -7,8 +7,9 @@ const chaiseSchema = new schema ({
         required: true, 
         unique: true 
     },
-    room: { 
-        type: String, 
+    roomChaise: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "room", 
         required: true 
     }, 
     status: { 
