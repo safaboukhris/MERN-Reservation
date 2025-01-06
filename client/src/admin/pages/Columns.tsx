@@ -1,16 +1,13 @@
 import { ColumnDef } from '@tanstack/react-table'
-
-import { MoreHorizontal, ArrowUpDown, CircleUserRound,  } from 'lucide-react'
-
+import { MoreHorizontal, ArrowUpDown, CircleUserRound } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import {
     DropdownMenu,
     DropdownMenuContent,
-    DropdownMenuItem,
     DropdownMenuLabel,
-    DropdownMenuTrigger
+    DropdownMenuTrigger,
+    DropdownMenuItem,
 } from '@/components/ui/dropdown-menu'
-
 
 export const columns: ColumnDef<any>[] = [
   {
@@ -27,8 +24,8 @@ export const columns: ColumnDef<any>[] = [
       );
     },
     cell: ({ row }) => {
-      const bookedBy = row.getValue('name'); 
-      const userName = bookedBy || 'Utilisateur inconnu';       
+      const bookedBy = row.getValue('name') as string | undefined; 
+      const userName = bookedBy ?? 'Utilisateur inconnu'; 
       return (
         <div className="flex items-center gap-2 flex-col">
           <CircleUserRound color="#595959" className="mb-1" size={32} /> 
@@ -42,9 +39,8 @@ export const columns: ColumnDef<any>[] = [
     accessorKey: 'lastname',
     header: 'Nom de famille',
     cell: ({ row }) => {
-      const bookedBy = row.getValue('lastname'); 
-      const userName = bookedBy || 'Utilisateur inconnu'; 
-      
+      const bookedBy = row.getValue('lastname') as string | undefined; 
+      const userName = bookedBy ?? 'Utilisateur inconnu'; 
       return (
         <div className="flex items-center gap-2 flex-col">
           <CircleUserRound color="#595959" className="mb-1" size={32} /> 
@@ -56,40 +52,35 @@ export const columns: ColumnDef<any>[] = [
   {
     accessorKey: 'phone',
     header: 'Num Tél',
-    
   },
   {
     accessorKey: 'email',
-    header: 'Email'
+    header: 'Email',
   },
   {
     accessorKey: 'role',
-    header: 'Rôle'
+    header: 'Rôle',
   },
   {
     accessorKey: 'createdAt',
     header: 'Compte créé le',
     cell: ({ row }) => {
       const date = new Date(row.getValue('createdAt'));
-      // Formatting the date to include time (hour and minute)
       const formatted = date.toLocaleString('fr-FR', {
         year: 'numeric',
         month: 'numeric',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false, // 24-hour format
+        hour12: false,
       });
       const formattedWithDash = formatted.replace(/(\d{4})/, '$1-');
       return <div className="font-medium">{formattedWithDash}</div>;
     },
-    
   },
   {
     id: 'actions',
-    cell: ({ row }) => {
-      const user = row.original
-
+    cell: () => {
       return (
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -100,12 +91,10 @@ export const columns: ColumnDef<any>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align='end'>
             <DropdownMenuLabel>Actions</DropdownMenuLabel>
-            <DropdownMenu >
-              Delete
-            </DropdownMenu>
+            <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      )
+      );
     }
   }
-]
+];

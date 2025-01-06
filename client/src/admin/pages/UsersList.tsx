@@ -25,7 +25,7 @@ const UsersList = () => {
             } catch (err) {
                 setError("An error occurred while fetching data.");
             } finally {
-                setLoading(false); // Assurez-vous que l'état loading est mis à jour
+                setLoading(false); 
             }
         };
         fetchUsers();
@@ -33,7 +33,7 @@ const UsersList = () => {
     
 
     if (loading) return <div className='flex justify-center items-center min-h-screen'>
-                            <FadeLoader color='#154849' loading={true} size={80} />
+                            <FadeLoader color='#154849' loading={true} height={25} width={25} />
                         </div>
     if (error) return <p>{error}</p>
 

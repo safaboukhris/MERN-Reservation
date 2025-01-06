@@ -63,7 +63,10 @@ export default {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			}
-  		}
+  		},
+		  screens: {
+			'sm-md': { min: '420px', max: '639px' }, 
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

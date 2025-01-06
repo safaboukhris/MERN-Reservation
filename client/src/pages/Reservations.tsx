@@ -1,13 +1,14 @@
 import { fetchData } from "@/utils/axiosInstance"
 import { useEffect, useState } from "react"
 import { format } from "date-fns";
+import { reservation } from "@/types/reservation"
 import Header from "@/components/Header";
 import { Trash2 } from "lucide-react";
 
 
 const Reservations = () => {
     const token = localStorage.getItem("authToken")
-    const [history, setHistory] = useState<any>([])
+    const [history, setHistory] = useState<reservation[]>([])
 
     useEffect(()=>{
         const fetchHistory = async () =>{
@@ -15,7 +16,6 @@ const Reservations = () => {
                 const response = await fetchData('/api/getbookings', 'GET', {}, {  Authorization: `Bearer ${token}`})
                 if(response.status === 200){
                     setHistory(response.data.history)
-                    console.log("my history is",response.data.history)
                 }
             }catch(error){
                 console.error(error)
@@ -39,7 +39,7 @@ const Reservations = () => {
         <>
         <Header/>
         <div className='flex flex-col mt-10 gap-5 px-4 py-2'>
-            <h3 className='text-3xl font-semibold border-b leading-10 border-black'> Réservations historique</h3>
+            <h1 className='text-3xl font-semibold border-b leading-10 border-black'> Réservations historique</h1>
             
             <div className="flex flex-col gap-6 items-center mt-10 mx-5">
                 {history.length > 0 ? (

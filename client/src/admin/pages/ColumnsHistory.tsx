@@ -5,11 +5,10 @@ import { MoreHorizontal, ArrowUpDown, CircleUserRound } from 'lucide-react'
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
+import { reservation } from '@/types/reservation'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -19,10 +18,11 @@ import {
     DropdownMenuLabel,
     DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
+import { ISignup } from '@/validations/auth';
 
 
 
-export const columns: ColumnDef<any>[] = [
+export const columns: ColumnDef<reservation>[] = [
   {
     accessorKey: 'bookedBy', // Accédez à l'objet complet
     header: ({ column }) => {
@@ -37,8 +37,8 @@ export const columns: ColumnDef<any>[] = [
       );
     },
     cell: ({ row }) => {
-      const bookedBy = row.getValue('bookedBy'); 
-      const userName = bookedBy?.name || 'Utilisateur inconnu';
+      const bookedBy = row.getValue('bookedBy') as ISignup | undefined; 
+      const userName = bookedBy?.name || 'Utilisateur inconnu';  
       return (
         <div className='flex items-center gap-2 flex-col' >
           <CircleUserRound color="#595959" className="mb-1" size={32} />

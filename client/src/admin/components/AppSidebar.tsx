@@ -36,7 +36,7 @@ const AppSidebar = () => {
     return (
     <>
        {/* Sidebar */}
-            <Sidebar variant="floating" className="w-80 bg-[#1C2434]">
+            <Sidebar variant="floating" className="w-80 bg-[#1C2434] h-auto">
                 <SidebarContent className='bg-[#1e2431] p-2'>
                     <SidebarGroup>
                         <SidebarGroupLabel className='mb-5 mt-3'> 

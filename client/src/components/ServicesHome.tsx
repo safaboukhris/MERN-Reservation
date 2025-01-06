@@ -2,6 +2,7 @@ import { fetchData } from "@/utils/axiosInstance";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FadeLoader } from 'react-spinners';
+import { Room } from "@/types/room";
 import {
     Carousel,
     CarouselContent,
@@ -18,16 +19,16 @@ const imageData = [
 ];
 
 // Composant TableCard pour afficher les informations dynamiques des salles
-const TableCard = ({ room, image }: { room: any; image: string }) => {
+const TableCard = ({ room, image }: { room: Room; image: string }) => {
     const navigate = useNavigate();
 
     return (
-        <div className="flex flex-col justify-center items-center max-w-md mx-auto my-4">
+        <div className="flex flex-col justify-center items-center max-w-md mx-auto my-4 ">
             <div
                 style={{
                     backgroundImage: `url('${image}')`,
                 }}
-                className="bg-gray-300 h-[600px] w-full rounded-xl shadow-md bg-cover bg-center"
+                className="bg-gray-300 h-[500px] w-full rounded-xl shadow-md bg-cover bg-center "
             ></div>
             <div className="w-64 md:w-72 bg-white -mt-12 shadow-lg rounded-lg overflow-hidden">
                 <div className="py-3 text-center font-bold uppercase tracking-wide text-[#154849]">
@@ -51,7 +52,7 @@ const TableCard = ({ room, image }: { room: any; image: string }) => {
 
 const ServicesHome = () => {
     const token = localStorage.getItem("authToken");
-    const [rooms, setRooms] = useState<any[]>([]);
+    const [rooms, setRooms] = useState<Room[]>([]);
 
     // Récupération des salles via l'API
     useEffect(() => {
@@ -72,8 +73,8 @@ const ServicesHome = () => {
     }, []);
 
     return (
-        <div className="mb-[8%]" id="services">
-            <h3 className="text-[#154849] font-extrabold text-6xl text-center mt-[20%] w-[60%] mx-auto">
+        <div className="mb-[8%] " id="services">
+            <h3 className="text-[#154849] font-extrabold lg:text-5xl text-center w-[60%] mx-auto sm:text-2xl ">
                 Trouvez l'environnement de travail qui vous motive
             </h3>
             <div className="mt-20 mx-auto p-4 w-[85%]">
@@ -94,7 +95,7 @@ const ServicesHome = () => {
                     </Carousel>
                 ) : (
                     <div className='flex justify-center items-center min-h-screen'>
-                        <FadeLoader color='#154849' loading={true} size={80} />
+                        <FadeLoader color='#154849' loading={true}  height={15} width={15} />
                     </div>
                 )}
             </div>
