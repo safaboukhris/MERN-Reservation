@@ -48,9 +48,9 @@ yarn install
 - JWT_SECRET=your_jwt_secret
 
 4-Start the application:
-•	Run the backend server:
+-	Run the backend server:
                        yarn dev
-•	Run the frontend:
+-	Run the frontend:
 
 cd  client
 yarn dev
