@@ -48,11 +48,11 @@ yarn install
 - JWT_SECRET=your_jwt_secret
 
 4-Start the application:
--	Run the backend server:
-                       yarn dev
--	Run the frontend:
-
-cd  client
-yarn dev
-5- Access the application: Open your browser and navigate to http://localhost:3000.
+## Run the Backend Server
+- Use the command: yarn dev
+## Run the Frontend
+- Navigate to the `client` directory: cd client
+- Use the command: yarn dev
+## Access the Application
+- Open your browser and navigate to: http://localhost:3000.
 
