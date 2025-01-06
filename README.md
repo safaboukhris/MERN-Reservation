@@ -43,9 +43,9 @@ yarn install
 3- Configure environment variables:
 •	Create a env file in the server folder with the following variables:
 
-PORT=5000
-DATABASE_URL=your_database_connection_string
-JWT_SECRET=your_jwt_secret
+- PORT=5000
+- DATABASE_URL=your_database_connection_string
+- JWT_SECRET=your_jwt_secret
 
 4-Start the application:
 •	Run the backend server:
