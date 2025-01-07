@@ -28,6 +28,29 @@ import {
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { FilterFn } from '@tanstack/react-table';
+
+
+// Custom filter function for nested objects
+const nestedFilter: FilterFn<any> = (row, columnId, filterValue) => {
+  const cellValue = row.getValue(columnId);
+
+  if (cellValue && typeof cellValue === 'object' && 'name' in cellValue) {
+    // Safely access the `name` property
+    return (
+      (cellValue as { name: string }).name
+        .toLowerCase()
+        .includes(filterValue.toLowerCase())
+    );
+  }
+
+  // Fallback for other types, ensuring a boolean is always returned
+  return (
+    cellValue?.toString().toLowerCase().includes(filterValue.toLowerCase()) ||
+    false
+  );
+};
+
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -56,7 +79,10 @@ export function DataTable<TData, TValue>({
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel()
+    getPaginationRowModel: getPaginationRowModel(),
+    filterFns: {
+      nestedFilter,
+    },
   })
 
   return (
