@@ -23,6 +23,7 @@ This platform allows users to:
 - Reserve various spaces such as **Bureau**, **Salle de reunion**, **Salle de formation**, **Réception**, and **Espace calme**.
 - After clicking "Réserver," users are redirected to a detailed page for the specific space (identified by its ID). 
 - On the detailed page, users can reserve by clicking on an available chair.
+- The user selects the check-in and check-out times (time slots), enters a message, and confirms the reservation.
 - View their entire reservation history by clicking on "Historique" in the navigation bar.
 
 For administrators:
