@@ -58,4 +58,33 @@ Make sure you have the following installed:
    ```bash
    git clone <repository-url>
    cd <repository-folder>
+2. Install dependencies for both the frontend and backend:
+# Frontend
+cd client
+yarn install
+
+# Backend
+cd server
+yarn install
+
+3. Configure environment variables:
+Create a .env file in the server folder with the following variables:
+
+PORT=5000
+DATABASE_URL=your_database_connection_string
+SECRET=your_jwt_secret
+4. Start the application:
+
+Run the Backend Server:
+yarn dev
+
+Run the Frontend:
+Navigate to the client directory:
+cd client
+yarn dev
+
+5. Access the Application:
+   
+   Open your browser and navigate to:
+   http://localhost:3000
 
