@@ -76,6 +76,45 @@ The **admin** folder is dedicated to the admin panel and includes:
 
 This structure ensures a clean separation of concerns, making the codebase easy to navigate and extend.
 
+## Dependencies
+
+This project uses the following dependencies to ensure functionality and a smooth development experience:
+
+### Production Dependencies
+- **@hookform/resolvers** (^3.9.1): Provides validation resolvers for `react-hook-form` with popular schema validation libraries like Zod.
+- **@tanstack/react-table** (^8.20.5): A powerful and extensible table-building library for React.
+- **axios** (^1.7.8): A promise-based HTTP client for making API requests.
+- **class-variance-authority** (^0.7.1): A utility for managing class names in components.
+- **clsx** (^2.1.1): A utility for conditionally joining class names.
+- **date-fns** (^4.1.0): A library for manipulating and formatting dates in JavaScript.
+- **embla-carousel-react** (^8.5.1): A carousel/slider library for React.
+- **framer-motion** (^11.15.0): A library for animations and gestures in React.
+- **lucide-react** (^0.462.0): React icons built from Lucide.
+- **react** (^18.3.1): A library for building user interfaces.
+- **react-day-picker** (8.10.1): A library for building date pickers in React.
+- **react-dom** (^18.3.1): React's DOM package for web rendering.
+- **react-hook-form** (^7.53.2): A library for managing form state and validation in React.
+- **react-icons** (^5.3.0): Popular icons for React.
+- **react-router-dom** (^7.0.1): A library for managing routing in React.
+- **react-spinner** (^0.2.7): A React library for spinners and loaders.
+- **react-spinners** (^0.15.0): Another spinner/loader library for React.
+- **tailwindcss-animate** (^1.0.7): A plugin for adding animation utilities to Tailwind CSS.
+- **zod** (^3.23.8): A TypeScript-first schema validation library.
+
+  ### Development Dependencies
+- **@eslint/js** (^9.15.0): ESLint core configuration for JavaScript linting.
+- **@types/node** (^22.10.1): TypeScript definitions for Node.js.
+- **@types/react** (^18.3.12): TypeScript definitions for React.
+- **@types/react-dom** (^18.3.1): TypeScript definitions for React DOM.
+- **tailwindcss** (^3.4.15): A utility-first CSS framework for styling.
+- **typescript** (~5.6.2): A typed superset of JavaScript.
+- **eslint** (^9.15.0): A tool for identifying and fixing JavaScript code issues.
+- **typescript-eslint** (^8.15.0): ESLint plugin for TypeScript.
+- **vite** (^6.0.1): A fast build tool for modern web applications.
+  ### Installation
+To install all dependencies, run:
+```bash
+yarn install
 ### Admin Credentials:
 - Email : admin@yahoo.fr
 - Mot de Passe : 123456
