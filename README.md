@@ -18,7 +18,8 @@ This project is a web application for online reservation of coworking spaces. It
 
 ## Features
 This platform allows users to:
-- Reserve various spaces such as **desks**, **meeting rooms**, **training rooms**, **shared spaces**, and **reception areas**.
+- Create an account and log in to access the reservation features.
+- Reserve various spaces such as **Bureau**, **Salle de reunion**, **Salle de formation**, **Réception**, and **Espace calme**.
 - After clicking "Réserver," users are redirected to a detailed page for the specific space (identified by its ID). 
 - On the detailed page, users can reserve by clicking on an available chair.
 - View their entire reservation history by clicking on "Historique" in the navigation bar.
@@ -45,16 +46,42 @@ This project aims to simplify the management and reservation of coworking spaces
 ---
 
 ## Component Architecture
-- **admin**: -components  
-  -pages  
-- **pages**:  
-  - DetailEspace  
-  - Home  
-  - Login  
-  - Register  
-  - Reservations
+
 
 ---
+## Folder Structure
+
+The project includes a well-organized folder structure. One of the key folders is the **UI Interface**, which contains all components and styles used for the frontend design.
+### UI Interface Folder
+The **UI Interface** folder includes:
+- **Components**: Reusable React components such as buttons, forms, and modals,.
+- **Pages**: Specific pages like login, home, espace details, register , reservation and history.
+- **Styles**: Custom styles and Tailwind CSS configurations to ensure a consistent design.
+- **Assets**: Images, icons, and other static files used across the UI.
+
+### Hooks Folder
+The **hooks** folder contains custom React hooks for managing reusable logic, such as state management, API calls, or side effects, to keep components clean and organized.
+
+### Validation Folder
+The **validation** folder is designed for handling form validation using **Zod**. It includes schemas and utilities to ensure that user input is validated consistently across the application.
+
+### Utils Folder
+The **utils** folder includes helper functions and utilities that are used throughout the project. Examples might include date formatters, API wrappers, or reusable logic for calculations.
+
+### Admin Folder
+The **admin** folder is dedicated to the admin panel and includes:
+- **Components**: 
+  - `AppSidebar`: The sidebar navigation for the admin panel.
+  - `DataTable`: A table component used to display data like users, bookings, and rooms.
+- **Pages**: 
+  - `BookingList`: Displays all user bookings for the admin to manage.
+  - `Columns`: Manages column definitions for tables in the admin panel.
+  - `ColumnHistory`: Shows the history of changes or bookings.
+  - `Dashboard`: The main dashboard providing an overview of admin-specific metrics and information.
+  - `RoomList`: Displays and manages a list of rooms available for booking.
+  - `UserList`: Displays and manages user information.
+
+This structure ensures a clean separation of concerns, making the codebase easy to navigate and extend.
 
 ### Admin Credentials:
 - Email : admin@yahoo.fr
