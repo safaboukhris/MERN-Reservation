@@ -58,16 +58,9 @@ The **UI Interface** folder includes:
 - **Pages**: Specific pages like login, home, espace details, register , reservation and history.
 - **Styles**: Custom styles and Tailwind CSS configurations to ensure a consistent design.
 - **Assets**: Images, icons, and other static files used across the UI.
-
-### Hooks Folder
-The **hooks** folder contains custom React hooks for managing reusable logic, such as state management, API calls, or side effects, to keep components clean and organized.
-
-### Validation Folder
-The **validation** folder is designed for handling form validation using **Zod**. It includes schemas and utilities to ensure that user input is validated consistently across the application.
-
-### Utils Folder
-The **utils** folder includes helper functions and utilities that are used throughout the project. Examples might include date formatters, API wrappers, or reusable logic for calculations.
-
+- **hooks** folder contains custom React hooks for managing reusable logic, such as state management, API calls, or side effects, to keep components clean and organized.
+- **validation** folder is designed for handling form validation using **Zod**. It includes schemas and utilities to ensure that user input is validated consistently across the application.
+- **utils** folder includes helper functions and utilities that are used throughout the project. Examples might include date formatters, API wrappers, or reusable logic for calculations.
 ### Admin Folder
 The **admin** folder is dedicated to the admin panel and includes:
 - **Components**: 
