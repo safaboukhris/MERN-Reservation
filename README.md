@@ -2,6 +2,20 @@
 
 This project is a web application for online reservation of coworking spaces. It includes both a **React+vite** frontend and an **Express.js** backend, styled using **Tailwind CSS** and **shadcn** components.
 
+
+## Table des Matières
+
+1. [Setup](#Installation and Setup)  
+2. [Technologies Utilisées](#Technologies Used)  
+3. [Prerequisites](#Prerequisites)  
+   - [Prérequis](#Prerequisites)  
+   - [Étapes d'Installation](#Steps to Run Locally)  
+4. [Architecture des Composants](#architecture-des-composants)  
+5. [Utilisation](#utilisation)  
+ 
+  
+
+---
 ## Features
 - Browse available coworking spaces.
 - Book coworking spaces online.
