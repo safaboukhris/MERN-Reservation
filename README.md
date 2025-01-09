@@ -4,23 +4,31 @@ This project is a web application for online reservation of coworking spaces. It
 
 ---
 
-## Table des Matières
+## Table of contents
 1. [Setup](#setup)
-1. [Installation and Setup](#installation-and-setup)  
-2. [Technologies Utilisées](#technologies-used)  
-3. [Prerequisites](#prerequisites)  
+2. [Installation and Setup](#installation-and-setup)  
+3. [Technologies Utilisées](#technologies-used)  
+4. [Prerequisites](#prerequisites)  
    - [Prérequis](#prerequisites)  
    - [Étapes d'Installation](#steps-to-run-locally)  
-4. [Architecture des Composants](#component-architecture)  
-5. [Utilisation](#utilisation)  
+5. [Architecture des Composants](#component-architecture)  
+6. [Utilisation](#utilisation)  
 
 ---
 
 ## Features
-- Browse available coworking spaces.
-- Book coworking spaces online.
-- Manage reservations (for admins and users).
-- Responsive and modern design.
+This platform allows users to:
+- Reserve various spaces such as **desks**, **meeting rooms**, **training rooms**, **shared spaces**, and **reception areas**.
+- After clicking "Réserver," users are redirected to a detailed page for the specific space (identified by its ID). 
+- On the detailed page, users can reserve by clicking on an available chair.
+- View their entire reservation history by clicking on "Historique" in the navigation bar.
+
+For administrators:
+- After logging in, they are redirected to the **Dashboard**.
+- In the sidebar, they can access the list of users with all their details.
+- Manage reservations by either accepting or canceling them.
+
+This project aims to simplify the management and reservation of coworking spaces, providing an intuitive interface for both users and administrators.
 
 ---
 ## setup
