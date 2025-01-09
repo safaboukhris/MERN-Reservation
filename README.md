@@ -114,8 +114,30 @@ This project uses the following dependencies to ensure functionality and a smoot
   ### Installation
 To install all dependencies, run:
 ```bash
+cd client
 yarn install
-### Admin Credentials:
+```
+### Backend Dependencies
+
+The backend of this project is built using **Node.js** and includes the following dependencies:
+
+- **bcryptjs** (^2.4.3): A library for hashing passwords for secure user authentication.
+- **body-parser** (^1.20.3): Middleware for parsing incoming request bodies in a middleware format.
+- **cors** (^2.8.5): Middleware for enabling Cross-Origin Resource Sharing (CORS) to handle requests from different origins.
+- **dotenv** (^16.4.5): A module for loading environment variables from a `.env` file.
+- **express** (^4.21.1): A lightweight web application framework for building APIs.
+- **jsonwebtoken** (^9.0.2): A library for generating and verifying JSON Web Tokens (JWT) for user authentication and authorization.
+- **mongoose** (^8.8.3): An object data modeling (ODM) library for MongoDB and Node.js.
+- **nodemon** (^3.1.7): A utility that monitors for file changes and automatically restarts the server during development.
+- **passport** (^0.7.0): Middleware for handling authentication strategies.
+- **passport-jwt** (^4.0.1): A Passport strategy for authenticating with JWTs.
+
+### Installation
+To install all backend dependencies, navigate to the backend directory and run:
+```bash
+yarn install
+```
+   ### Admin Credentials:
 - Email : admin@yahoo.fr
 - Mot de Passe : 123456
 ## Installation and Setup
