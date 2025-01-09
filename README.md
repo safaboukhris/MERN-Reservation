@@ -82,8 +82,8 @@ SECRET=your_jwt_secret
 
 ### Start the application:
 
--Run the Backend Server:
-yarn dev
+- Run the Backend Server:
+- yarn dev
 
 -Run the Frontend:
 Navigate to the client directory:
