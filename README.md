@@ -70,6 +70,21 @@ Make sure you have the following installed:
 - cd server
 - yarn install
 
+### Start the application:
+
+- Run the Backend Server:
+- yarn dev
+
+- Run the Frontend:
+Navigate to the client directory:
+- cd client
+- yarn dev
+
+5. Access the Application:
+   
+   Open your browser and navigate to:
+   http://localhost:3000
+
 ### Configure Environment Variables
 Create a `.env` file in the `server` folder with the following variables:
 
@@ -80,18 +95,4 @@ SECRET=your_jwt_secret
 
 
 
-### Start the application:
-
-- Run the Backend Server:
-- yarn dev
-
--Run the Frontend:
-Navigate to the client directory:
-- cd client
-- yarn dev
-
-5. Access the Application:
-   
-   Open your browser and navigate to:
-   http://localhost:3000
 
