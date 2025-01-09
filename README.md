@@ -53,8 +53,6 @@ SECRET=your_jwt_secret
 
 ---
 
-
----
 ## Folder Structure
 
 The project includes a well-organized folder structure. One of the key folders is the **UI Interface**, which contains all components and styles used for the frontend design.
