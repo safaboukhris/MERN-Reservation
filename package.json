@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
-  "author": "Safa et Marwa",
+  "author": "RB IT SOLUTIONS",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

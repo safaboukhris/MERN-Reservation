@@ -60,10 +60,6 @@ const getAdminBooking = async (req,res) => {
                 select: 'roomName roomType roomPrice roomDescription addedBy',
             })
             .populate({
-                path: 'bookedChaise',
-                select: 'id roomChaise status'
-            })
-            .populate({
                 path: 'bookedBy',
                 select: 'name email lastname phone', // Only populate name and email fields
             });
