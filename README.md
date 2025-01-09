@@ -67,12 +67,14 @@ yarn install
 cd server
 yarn install
 
-3. Configure environment variables:
-Create a .env file in the server folder with the following variables:
+### Configure Environment Variables
+Create a `.env` file in the `server` folder with the following variables:
 
+```env
 PORT=5000
 DATABASE_URL=your_database_connection_string
 SECRET=your_jwt_secret
+
 4. Start the application:
 
 Run the Backend Server:
