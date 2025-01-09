@@ -63,12 +63,12 @@ Make sure you have the following installed:
    cd <repository-folder>
 2. Install dependencies for both the frontend and backend:
 # Frontend
-cd client
-yarn install
+- cd client
+- yarn install
 
 # Backend
-cd server
-yarn install
+- cd server
+- yarn install
 
 ### Configure Environment Variables
 Create a `.env` file in the `server` folder with the following variables:
@@ -82,13 +82,13 @@ SECRET=your_jwt_secret
 
 ### Start the application:
 
-Run the Backend Server:
+-Run the Backend Server:
 yarn dev
 
-Run the Frontend:
+-Run the Frontend:
 Navigate to the client directory:
-cd client
-yarn dev
+- cd client
+- yarn dev
 
 5. Access the Application:
    
