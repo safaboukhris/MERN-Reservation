@@ -5,7 +5,7 @@ This project is a web application for online reservation of coworking spaces. It
 ---
 
 ## Table des Matières
-
+1. [Setup](#setup)
 1. [Installation and Setup](#installation-and-setup)  
 2. [Technologies Utilisées](#technologies-used)  
 3. [Prerequisites](#prerequisites)  
@@ -23,7 +23,12 @@ This project is a web application for online reservation of coworking spaces. It
 - Responsive and modern design.
 
 ---
-
+## setup
+- clone the project then delete the .git folder to start a new project and then open your terminal and type "git init"
+- Set up your credentials and the origin you want to point inti with git.
+- run yarn to install  dependencies and set up the project
+- Create a .env file at the root of the project and copy the .env example text into it (make sure that the .env file is added to .gitgonre)
+  
 ## Technologies Used
 - **Frontend**: React.js, Tailwind CSS, shadcn
 - **Backend**: Node.js, Express.js
