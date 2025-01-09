@@ -88,7 +88,7 @@ Make sure you have the following installed:
 - Node.js (v16 or higher)
 - yarn
 - MongoDB (local or cloud-based database instance)
-This project uses the following dependencies to ensure functionality and a smooth development experience:
+
 ## Dependencies
 ### Production Dependencies
 - **@hookform/resolvers** (^3.9.1): Provides validation resolvers for `react-hook-form` with popular schema validation libraries like Zod.
