@@ -45,8 +45,6 @@ This project aims to simplify the management and reservation of coworking spaces
 
 ---
 
-## Component Architecture
-
 
 ---
 ## Folder Structure
