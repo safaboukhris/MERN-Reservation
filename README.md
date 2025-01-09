@@ -43,6 +43,9 @@ This project is a web application for online reservation of coworking spaces. It
 
 ---
 
+### Admin Credentials:
+- Email : admin@yahoo.fr
+- Mot de Passe : 123456
 ## Installation and Setup
 
 ### Prerequisites
@@ -75,7 +78,9 @@ PORT=5000
 DATABASE_URL=your_database_connection_string
 SECRET=your_jwt_secret
 
-4. Start the application:
+
+
+### Start the application:
 
 Run the Backend Server:
 yarn dev
