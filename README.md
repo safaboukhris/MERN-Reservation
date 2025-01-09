@@ -5,14 +5,15 @@ This project is a web application for online reservation of coworking spaces. It
 ---
 
 ## Table of contents
-1. [Setup](#setup)
-2. [Installation and Setup](#installation-and-setup)  
+1. [Features](#Features)
+2. [setup](#setup)  
 3. [Technologies Utilisées](#technologies-used)  
-4. [Prerequisites](#prerequisites)  
-   - [Prérequis](#prerequisites)  
+4. [Folder Structure](#UI-Interface-Folder)  
+   - [Prérequis](#Prerequisites)  
    - [Étapes d'Installation](#steps-to-run-locally)  
-5. [Architecture des Composants](#component-architecture)  
-6. [Utilisation](#utilisation)  
+5. [Installation](#Installation)  
+6. [Steps to Run Locally](#Steps-to-Run-Locally)
+7. [Access the Application](#Access-the-Application)
 
 ---
 
@@ -34,9 +35,16 @@ This project aims to simplify the management and reservation of coworking spaces
 ---
 ## setup
 - clone the project then delete the .git folder to start a new project and then open your terminal and type "git init"
-- Set up your credentials and the origin you want to point inti with git.
+- Set up your credentials and the origin you want to point into with git.
 - run yarn to install  dependencies and set up the project
-- Create a .env file at the root of the project and copy the .env example text into it (make sure that the .env file is added to .gitgonre)
+- Create a .env file at the root of the project and copy the .env(make sure that the .env file is added to .gitgonre)
+- Create a `.env` file in the `server` folder with the following variables:
+
+```env
+PORT=5000
+DATABASE_URL=your_database_connection_string
+SECRET=your_jwt_secret
+```
   
 ## Technologies Used
 - **Frontend**: React.js, Tailwind CSS, shadcn
@@ -54,11 +62,11 @@ The project includes a well-organized folder structure. One of the key folders i
 The **UI Interface** folder includes:
 - **Components**: Reusable React components such as buttons, forms, and modals,.
 - **Pages**: Specific pages like login, home, espace details, register , reservation and history.
-- **Public**: Custom styles and Tailwind CSS configurations to ensure a consistent design.
-- **Assets**: Images, icons, and other static files used across the UI.
-- **hooks** :folder contains custom React hooks for managing reusable logic, such as state management, API calls, or side effects, to keep components clean and organized.
+- **Public**: Images, icons, and other static files used across the UI.
 - **validation** :folder is designed for handling form validation using **Zod**. It includes schemas and utilities to ensure that user input is validated consistently across the application.
-- **utils** :folder includes helper functions and utilities that are used throughout the project. Examples might include date formatters, API wrappers, or reusable logic for calculations.
+- **utils**: This folder includes reusable utilities for handling API interactions. It contains:
+  - **`axiosInstance`**: A pre-configured Axios instance for making API requests with default settings such as base URL, headers, and interceptors.
+  - **`fetchData`**: A utility function for simplifying GET requests using the Axios instance.
 ### Admin Folder
 The **admin** folder is dedicated to the admin panel and includes:
 - **Components**: 
@@ -74,10 +82,14 @@ The **admin** folder is dedicated to the admin panel and includes:
 
 This structure ensures a clean separation of concerns, making the codebase easy to navigate and extend.
 
-## Dependencies
 
+### Prerequisites
+Make sure you have the following installed:
+- Node.js (v16 or higher)
+- yarn
+- MongoDB (local or cloud-based database instance)
 This project uses the following dependencies to ensure functionality and a smooth development experience:
-
+## Dependencies
 ### Production Dependencies
 - **@hookform/resolvers** (^3.9.1): Provides validation resolvers for `react-hook-form` with popular schema validation libraries like Zod.
 - **@tanstack/react-table** (^8.20.5): A powerful and extensible table-building library for React.
@@ -135,17 +147,9 @@ To install all backend dependencies, navigate to the backend directory and run:
 ```bash
 yarn install
 ```
-   ### Admin Credentials:
+ ### Admin Credentials:
 - Email : admin@yahoo.fr
 - Mot de Passe : 123456
-## Installation and Setup
-
-### Prerequisites
-Make sure you have the following installed:
-- Node.js (v16 or higher)
-- yarn
-- MongoDB (local or cloud-based database instance)
-- dependencies:
 
 ### Steps to Run Locally
 
@@ -153,37 +157,13 @@ Make sure you have the following installed:
    ```bash
    git clone <repository-url>
    cd <repository-folder>
-2. Install dependencies for both the frontend and backend:
-# Frontend
-- cd client
-- yarn install
 
-# Backend
-- cd server
-- yarn install
 
-### Start the application:
-
-- Run the Backend Server:
-- yarn dev
-
-- Run the Frontend:
-Navigate to the client directory:
-- cd client
-- yarn dev
-
-5. Access the Application:
+###  Access the Application:
    
    Open your browser and navigate to:
    http://localhost:3000
 
-### Configure Environment Variables
-Create a `.env` file in the `server` folder with the following variables:
-
-```env
-PORT=5000
-DATABASE_URL=your_database_connection_string
-SECRET=your_jwt_secret
 
 
 
