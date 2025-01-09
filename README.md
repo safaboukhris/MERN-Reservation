@@ -15,14 +15,22 @@ This project is a web application for online reservation of coworking spaces. It
 - **Backend**: Node.js, Express.js
 - **Database**:  MongoDB
 ---
-
+## Component Architecture
+- **admin**: -components
+-            -pages
+- **pages**:  - DetailEspace
+              - Home
+              - Login
+              - Register
+              - Reservations
 ## Installation and Setup
 
 ### Prerequisites
 Make sure you have the following installed:
 - Node.js (v16 or higher)
 - yarn
-- [Database (if applicable)]
+- MongoDB (local or cloud-based database instance)
+- dependencies:
 
 ### Steps to Run Locally
 
@@ -45,7 +53,7 @@ yarn install
 
 - PORT=5000
 - DATABASE_URL=your_database_connection_string
-- JWT_SECRET=your_jwt_secret
+- SECRET=your_jwt_secret
 
 4-Start the application:
 ## Run the Backend Server
